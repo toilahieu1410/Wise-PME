@@ -1,0 +1,331 @@
+
+<html lang="en">
+
+  <head>
+ 
+    <%- include('../head/head-alarm.ejs') -%>
+
+    <script type="text/javascript" src="http://www.maytinhhtl.com/images/code/snowstorm.js"></script>
+        <!-- partial -->
+        <div class="main-panel" id="main-panel">
+          <div class="content-wrapper" >
+                <div class="col-md-12" style="background: url(/static/images/img-map/3.jpg);background-size: cover !important;padding-top: 20px;height: 100vh;">
+
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead class="thead-inverse">
+
+                        </thead>
+                        <div style="display: flex;width: 100%;margin-bottom: 10px;">
+                          <form action="/exportlvmsb1", method="post">
+                            <button type="submit" class="btn btn-success"><i class="fa fa-file-excel-o" style="margin-right:5px"></i>Export Excel</button>
+                        </form>
+                        <form action="/alarm/search/LVMSB1">
+                          <div class="form-search" style="display: flex;justify-content: flex-end;width:100%">
+                            <input type="text" id="name" name="name" placeholder="Type...">
+                            <button type="submit" class="btn btn-primary" style="border-radius: 0;"  ><i class="fa fa-search" style="margin-right:5px;"></i>Search</button>
+                          </div>
+                        
+                        </form>
+                      </div>
+                        <tbody>
+                         
+                          
+                          <% data.forEach(function(i){ %>
+                          
+                          <tr>
+                            
+                            <th scope="row" colspan="7" style="background-color: steelblue;text-indent: 10px; color: white;"><%= i.Device %> - <%= i.Type %></th>
+                          </tr>
+                          <tr>
+                            <% var color; %>
+                            <% if(i.isDone == true){ %>
+                            <% color = 'blue' %>
+                            <% } else{ %>
+                            <% color ='red' %>
+                            <% } %>
+                            <td style="height:50px;text-indent:10px;vertical-align: middle;min-width: 70px;"><i class="fa fa-circle" style="margin-right:5px;color:<%= color %>"></i><label><%= i.Type %>- <%= i.Value %> <%= i.Unit %></label></td>
+                            <td style="vertical-align:middle;min-width: 60px;"><label>Overload: <%= i.Overload %> <%= i.Unit %></label></td>
+  
+                            <td style="min-width:100px;vertical-align: middle;"><label>Create At: </label><span> <%= i.CreatAt %> </span> </br><label>Update At: </label><span> <%= i.UpdateAt %></span> </td>
+
+                            <td style="min-width: 70px;vertical-align: middle;"><label>User Update:</label> <span> <%= i.Userid %></span> <br/>
+                              <div class="action-button">
+                                <a href = "/alarm/edit/LVMSB1/<%= i._id %>">
+                                  <button type="button" class="btn btn-success"> <i class="fa fa-edit" style="margin-right: 5px;" arial-hidden="true"></i>Edit</button>
+                                 
+                                  </a> &nbsp; &nbsp; &nbsp;
+                                  <a onclick="return confirmDelete('Are you sure want to permanently delete this message?')" href = "/alarm/remove/LVMSB1/<%= i._id %>">
+                                <button type="button" class="btn btn-danger">       <i class="fa fa-remove" style="margin-right: 5px;" arial-hidden="true"></i>Delete</button>
+                              
+                                    </a>
+                              </div>
+
+                              <script>
+                                function confirmDelete(tinnhan) {
+                                  if(window.confirm(tinnhan) == true) {
+                                    return true;
+                                  }
+                                  return false;
+                                }
+                              </script>
+                      
+                            </td>
+                            
+                        
+                              <td style="vertical-align:middle;width: 500px;white-space: normal;word-break: break-word;"><a href = "/alarm/edit/LVMSB1/<%= i._id %>"><div class="label-border" style="padding:10px;border:1px solid #ccc"><label><%= i.Note %></label></div></a></td>
+
+                            <% }) %>
+                          </tr>
+                        
+                        </tbody>
+                      </table>
+                    </div>
+
+                  <% if (pages > 0) { %>
+                    <ul class="pagination text-center">
+                        <% if (current == 1) { %>
+                            <li class="disabled"><a>First</a></li>
+                        <% } else { %>
+                            <li><a href="/alarm/LVMSB1/1">First</a></li>
+                        <% } %>
+                        <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                        <% if (i !== 1) { %>
+                            <li class="disabled"><a>...</a></li>
+                        <% } %>
+                        <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                            <% if (i == current) { %>
+                                <li class="active"><a><%= i %></a></li>
+                            <% } else { %>
+                                <li><a href="/alarm/LVMSB1/<%= i %>"><%= i %></a></li>
+                            <% } %>
+                            <% if (i == Number(current) + 4 && i < pages) { %>
+                                <li class="disabled"><a>...</a></li>
+                            <% } %>
+                        <% } %>
+                        <% if (current == pages) { %>
+                            <li class="disabled"><a>Last</a></li>
+                        <% } else { %>
+                            <li><a href="/alarm/LVMSB1/<%= pages %>">Last</a></li>
+                        <% } %>
+                    </ul>
+                <% } %>
+                </div>
+            
+
+      
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <!-- <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="https://hoplongtech.com/" target="_blank">hoplongtech.com</a>. All rights reserved.</span>
+            </div>
+          </footer> -->
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+        <div id="loadingspinner"></div>
+      </div>
+      <script src="/static/js/loadpage/loadpage.js"></script>
+      <script>
+        
+        $('.sub-menu ul.dropdown-sidebar').hide();
+  
+      $(".sub-menu a").click(function () {
+        $(this).parent(".sub-menu").children("ul").slideToggle("100");
+        $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+      });
+      </script>
+  
+      <!-- page-body-wrapper ends -->
+    </div>
+    <style>
+      .navbar-expand-md {
+  display: none;
+}
+.sidebar {
+  width: auto;
+  display: none;
+}
+.navbar .navbar-brand-wrapper {
+  display: none !important;
+}
+/* .navbar-menu-wrapper.d-flex.align-items-center {
+    display: none !important;
+} */
+.page-body-wrapper {
+  margin-top: 0;
+}
+.main-panel {
+  width:100%;
+
+} 
+  .simple-pagination ul {
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  .label-border label {
+    color:white;
+    min-height: 45px;
+    overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+     /* khoảng cách dòng */
+   max-height: 60px;      /* Chiều cao tối đa */
+   -webkit-line-clamp: 2; /* Số dòng hiển thị */
+   -webkit-box-orient: vertical;
+  }
+  .simple-pagination li {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  .table thead th {
+    font-size: 14px;
+  }
+  .simple-pagination li a,
+  .simple-pagination li span {
+    color: #666;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #EEE;
+    background-color: #FFF;
+    box-shadow: 0px 0px 10px 0px #EEE;
+  }
+  .pagination li:hover{
+    cursor: pointer;
+}
+  .simple-pagination .current {
+    color: #FFF;
+    background-color: #FF7182;
+    border-color: #FF7182;
+  }
+  
+  .simple-pagination .prev.current,
+  .simple-pagination .next.current {
+    background: #e04e60;
+  }
+  table {
+    margin-bottom:20px;
+  }
+  #container {
+      height: 400px;
+  }
+  .table-modal tr th, .table-modal tr td {
+    border:1px solid #ccc;
+  }
+  .highcharts-data-table table {
+    font-family: Verdana, sans-serif;
+    border-collapse: collapse;
+    border: 1px solid #EBEBEB;
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+  }
+  .highcharts-data-table caption {
+      padding: 1em 0;
+      font-size: 1.2em;
+      color: #555;
+  }
+  .highcharts-data-table th {
+    font-weight: 600;
+      padding: 0.5em;
+  }
+  .caret-right {
+      position: relative;
+      top:5px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      vertical-align: middle;
+      border-left: 4px solid;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+  }
+  .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+      padding: 0.5em;
+  }
+  .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+      background: #f8f8f8;
+  }
+  .highcharts-data-table tr:hover {
+      background: #f1f7ff;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+      display: block;
+  }
+  ul.dropdown-sidebar li ul.dropdown-menu {
+    position: absolute;
+      top: 0;
+      font-size: 14px;
+      width: 90%;
+      left: 257px;
+      z-index: 100;
+  
+  }
+  nav.sidebar-offcanvas ul li a {
+    display: block;
+    background: #ebebeb;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+
+  }
+  .table>thead>tr>th {
+    border-bottom: none;
+  }
+
+  nav.sidebar-offcanvas ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav.sidebar-offcanvas ul li a:hover {
+    background: #f8f8f8;
+    color: #515151;
+  }
+  nav.sidebar-offcanvas ul li a .fa.right {
+    width: 16px;
+    text-align: center;
+    margin-right: 5px;
+    float:right;
+  }
+  nav.sidebar-offcanvas ul ul {
+    background-color:#ebebeb;
+  }
+  nav.sidebar-offcanvas ul li ul li a {
+    background: #f8f8f8;
+    border-left: 4px solid transparent;
+    padding: 10px 20px;
+  }
+  nav.sidebar-offcanvas ul li ul li a:hover {
+    background: #d4e2f1;
+    border-left: 4px solid #3498db;
+  }
+  .sidebar-icon-only .sidebar .nav .nav-item .nav-link .fa.right {
+      display: none;
+  }
+  table tr th, table tr td {
+  
+  }
+  .table td {
+    font-size: 14px;
+    color:white;
+  }
+    </style>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="../js/vendor.bundle.base.js"></script>
+    <script src="/static/js/alarm/lvmsb1.js"></script>
+    <!-- <script src="/static/js/alarm/dashboard.js"></script> -->
+    <script src="/static/js/alarm/jquery.paginate.js"></script>
+  
+  
+  </body>
+  
+  </html>
+  
+  

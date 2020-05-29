@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <title>jQuery UI Datepicker - Default functionality</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <%- include('../../head/head-report.ejs') -%>
+</head>
+<body>
+
+  <!-- <p>Date: <input type="text" id="datepicker"></p>
+  <form action="/datepicker", method="post">
+    <button type="submit" class="btn btn-success"><i style="margin-right:5px"></i>Export Excel</button>
+</form> -->
+<div action="/datepicker" class="" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true" style="outline: none;">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center" style="display:flex;background-color: deepskyblue;">
+        <h3 class="modal-title w-100 font-weight-bold" style="width:100%;color: white;">Date Time</h4>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="opacity: 1;color: white;">
+          <span aria-hidden="true">&times;</span>
+        </button> -->
+      </div>
+      <form action="/<%= action %>">
+      <div class="modal-body mx-3" style="text-align:center;padding: 15px 100px;">
+        <form class="form-horizontal">
+          <div class="md-form mb-5">
+            <div class="form-group" style="display:flex">
+              <label data-error="wrong" data-success="right" for="form34" style="line-height: 30px;">Start Date</label>
+              <input type="text" id="start-date" name="startDate" class="form-control datepicker" autocomplete="off">
+            </div>
+          </div>
+  
+          <div class="md-form mb-5">
+            <div class="form-group" style="display:flex">
+              <label data-error="wrong" data-success="right" for="form29" style="line-height: 30px;">End Date</label>
+              <input type="text" id="end-date" name="endDate" class="form-control datepicker" autocomplete="off">
+            </div>
+          </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="submit" class="btn btn-info" href="/power_hour"><i class="fa fa-search" style="margin-right:5px;"></i>Search</button>
+          </div>
+        </form>
+      </div>
+        
+    </form>
+
+      <script>
+    
+        $('#end-date').datepicker({
+          dateFormat: "yy/mm/dd" 
+        });
+  
+    $("#start-date").datepicker({
+      dateFormat: "yy/mm/dd",
+      onSelect: function(date) {
+        var date1 = $('#start-date').datepicker('getDate');
+        var date = new Date(Date.parse(date1));
+        date.setDate(date.getDate());
+        var newDate = date.toDateString();
+        newDate = new Date(Date.parse(newDate));
+        $('#end-date').datepicker("option", "minDate", newDate);
+      }
+    });
+    </script>
+      
+    </div>
+  </div>
+</div>
+</body>
+</html>
+<style>
+  .md-form.mb-5 label {
+    min-width:85px;
+  }
+  .highcharts-container {
+  width:auto !important;
+  height:auto !important;
+}
+svg.highcharts-root {
+width:auto !important;
+  height:auto !important;
+}
+</style>

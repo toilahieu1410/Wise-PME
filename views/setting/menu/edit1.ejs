@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../../head/head.ejs') -%>
+  
+    <%- include('../../head/menu.ejs') -%>
+  
+    <%- include('../menu/dropdown.ejs') -%>
+ 
+  </nav>
+<body>
+  <div class="main-panel" >
+    <div class="content-wrapper" style="background-color: #eee;display: flex;align-items: center;">
+      <div class="col-md-12">
+        <div class="row">
+            <% data.reverse() %>
+            <% data.forEach(function(i){ %>
+                <form action="/setting/<%= i._id %>" method="post" id="form-update">
+                  <div  >
+                    <% data.forEach(function(i){ %>
+                    <div class="column">
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-edit" style="width: calc(100% - 1000px);background-color: #eee;margin:0 auto;box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07);">
+                            <h3 class="title"><%= i.Device %></h3>
+                            <div class="form-number">
+                              <ul>
+                                <div class="form-group">
+                                  <label for="CurrentMax"> Current-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="CurrentMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.CurrentMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="VolUMax"> VolU-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="VolUMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.VolUMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="VolVMax"> VolV-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="VolVMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.VolVMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="THDBigMax"> THD-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="THDBigMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.THDBigMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="thdMax"> thd-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="thdMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.thdMax %>">
+                                </div>
+                                <!-- <div class="col-md-12" style="text-align:center">
+                                  <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;" href="/setting/<%= i._id %>"> Submit</button>
+                              </div> -->
+                              <a href = "/setting/<%= i._id %>" >
+                                <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;"  ><i class="fa fa-check" style="margin-right:5px"></i> Submit </button>
+                                </a>
+                              </ul>
+                            </div>
+                          </div>
+                      
+                        </div>
+                    
+                      </div>
+                      <% }) %>
+                    </div>
+                  </div>
+                    <% }) %>
+                </form>
+        </div>
+    </div>
+    </div>
+    <!-- <footer class="footer">
+      <div class="d-sm-flex justify-content-center justify-content-sm-between">
+        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="https://hoplongtech.com/" target="_blank">hoplongtech.com</a>. All rights reserved.</span>
+      </div>
+    </footer> -->
+    </div>
+
+		<!-- <div class="jumbotron text-center">
+			<h1 class="dispay-3"> Sua du lieu</h1>
+			<p class="lead"> Vao mongodb</p>
+			<hr class="my-2">
+			
+		</div>  -->
+ 
+
+    
+</body>
+<style>
+ h3.title {
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  color:white;
+  background: linear-gradient(90deg, rgba(0,36,22,1) 0%, rgba(9,121,35,0.8939950980392157) 0%, rgba(0,255,81,0.9640231092436975) 100%);
+}
+.navbar-expand-md {
+  display: none;
+}
+.sidebar {
+  width: auto;
+  display: none;
+}
+.navbar .navbar-brand-wrapper {
+  display: none !important;
+}
+/* .navbar-menu-wrapper.d-flex.align-items-center {
+    display: none !important;
+} */
+.page-body-wrapper {
+  margin-top: 0;
+}
+.main-panel {
+  width:100%;
+
+} 
+.form-number ul {
+  padding-right: 30px;
+}
+      .form-group label {
+     font-size:unset; 
+        line-height:20px; 
+     vertical-align:middle; 
+     margin-bottom: 0; 
+}
+    .simple-pagination ul {
+      margin: 0 0 20px;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+    .label-border label {
+      overflow: hidden;
+     text-overflow: ellipsis;
+     display: -webkit-box;
+       /* khoảng cách dòng */
+     max-height: 60px;      /* Chiều cao tối đa */
+     -webkit-line-clamp: 2; /* Số dòng hiển thị */
+     -webkit-box-orient: vertical;
+    }
+    .simple-pagination li {
+      display: inline-block;
+      margin-right: 5px;
+    }
+    .table thead th {
+      font-size: 14px;
+    }
+    .simple-pagination li a,
+    .simple-pagination li span {
+      color: #666;
+      padding: 5px 10px;
+      text-decoration: none;
+      border: 1px solid #EEE;
+      background-color: #FFF;
+      box-shadow: 0px 0px 10px 0px #EEE;
+    }
+    
+    .simple-pagination .current {
+      color: #FFF;
+      background-color: #FF7182;
+      border-color: #FF7182;
+    }
+    
+    .simple-pagination .prev.current,
+    .simple-pagination .next.current {
+      background: #e04e60;
+    }
+    table {
+      margin-bottom:20px;
+    }
+    #container {
+        height: 400px;
+    }
+    .table-modal tr th, .table-modal tr td {
+      border:1px solid #ccc;
+    }
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+    .highcharts-data-table caption {
+        padding: 1em 0;
+        font-size: 1.2em;
+        color: #555;
+    }
+    .highcharts-data-table th {
+      font-weight: 600;
+        padding: 0.5em;
+    }
+    .caret-right {
+        position: relative;
+        top:5px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: middle;
+        border-left: 4px solid;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+    }
+    .highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+        padding: 0.5em;
+    }
+    .highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+        background: #f8f8f8;
+    }
+    .highcharts-data-table tr:hover {
+        background: #f1f7ff;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+    ul.dropdown-sidebar li ul.dropdown-menu {
+      position: absolute;
+        top: 0;
+        font-size: 14px;
+        width: 90%;
+        left: 257px;
+        z-index: 100;
+    
+    }
+    nav.sidebar-offcanvas ul li a {
+      display: block;
+      background: #ebebeb;
+      padding: 10px 15px;
+      color: #333;
+      text-decoration: none;
+      -webkit-transition: 0.2s linear;
+      -moz-transition: 0.2s linear;
+      -ms-transition: 0.2s linear;
+      -o-transition: 0.2s linear;
+      transition: 0.2s linear;
+    }
+    .table>thead>tr>th {
+      border-bottom: none;
+    }
+    /* .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+      border-top:none;
+      border-right: 1px solid #ddd;
+    } */
+    nav.sidebar-offcanvas ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    nav.sidebar-offcanvas ul li a:hover {
+      background: #f8f8f8;
+      color: #515151;
+    }
+    nav.sidebar-offcanvas ul li a .fa.right {
+      width: 16px;
+      text-align: center;
+      margin-right: 5px;
+      float:right;
+    }
+    nav.sidebar-offcanvas ul ul {
+      background-color:#ebebeb;
+    }
+    nav.sidebar-offcanvas ul li ul li a {
+      background: #f8f8f8;
+      border-left: 4px solid transparent;
+      padding: 10px 20px;
+    }
+    nav.sidebar-offcanvas ul li ul li a:hover {
+      background: #d4e2f1;
+      border-left: 4px solid #3498db;
+    }
+    .sidebar-icon-only .sidebar .nav .nav-item .nav-link .fa.right {
+        display: none;
+    }
+    table tr th, table tr td {
+    
+    }
+    .table td {
+      font-size: 14px;
+    }
+      </style>
+<style>
+    .layout-bottom {
+        border-bottom: 1px solid #bbb;
+    }
+    #form-update {
+  
+        display: inline-block;
+        width:100%;
+    }
+    p, label {
+        margin-bottom:0 ;
+    }
+    label {
+        font-weight: 700;
+    }
+    .col.md-6 {
+        float: left;
+    }
+</style>
+</html>

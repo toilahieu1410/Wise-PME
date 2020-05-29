@@ -1,0 +1,77 @@
+      <div class="navbar-brand-wrapper d-flex justify-content-center">
+        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100" style="margin: 0 auto;text-align: center;">  
+          <a class="navbar-brand brand-logo" href="#">Diagram Library</a>
+          <a class="navbar-brand brand-logo-mini" href="#">Diagram Library</a>
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" >
+            <span class="fa fa-list"></span>
+          </button>
+        </div>  
+      </div>
+<!--       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-4 w-100">
+          <li class="nav-item nav-search d-none d-lg-block w-100">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="search">
+                  <i class="mdi mdi-magnify"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+  
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div> -->
+    </nav>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar" style="background:linear-gradient(90deg, rgba(51,34,181,0.8995973389355743) 0%, rgba(27,65,231,0.46262254901960786) 0%, rgba(45,150,208,0.9640231092436975) 100%)">
+        <ul class="dropdown-sidebar">
+          <li class="nav-item" >
+            <a class="nav-link" href="/diagram/map1" style="background: linear-gradient(90deg, rgba(158, 181, 34, 0.78) 0%, rgba(27, 231, 167, 0.87) 0%, rgba(36, 157, 195, 0.97) 100%);color:snow;border-bottom:1px solid">
+              <i class="fa fa-home" style="margin-right: 5px;"></i>
+              <span class="menu-title">I UI Map</span>
+            </a>
+          </li>
+		    <li class="nav-item" >
+              <a class="nav-link" href="/diagram/map2" style="background: linear-gradient(90deg, rgba(158, 181, 34, 0.78) 0%, rgba(27, 231, 167, 0.87) 0%, rgba(36, 157, 195, 0.97) 100%);color:snow;border-bottom:1px solid">
+              <i class="fa fa-home" style="margin-right: 5px;"></i>
+              <span class="menu-title">One - line 1</span>
+            </a>
+          </li>
+		    <!-- <li class="nav-item">
+              <a class="nav-link" href="/diagram/map3">
+              <i class="fa fa-home" style="margin-right: 5px;"></i>
+              <span class="menu-title">One - line 2</span>
+            </a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="./xuong.html">
+              <i class="fa fa-home" style="margin-right: 5px;"></i>
+              <span class="menu-title">Xưởng Sài Đồng</span>
+            </a>
+          </li> -->
+        </ul>
+        <script>
+
+          var setDefaultActive = function () {
+              var path = window.location.pathname;
+  
+              var element = $("ul.dropdown-sidebar li.nav-item a[href='" + path + "']");
+              element.addClass("active-sidebar_left");
+  
+          }
+  
+          setDefaultActive()
+      </script>
+      <style>
+         .active-sidebar_left {
+        background: linear-gradient(90deg, rgba(158, 181, 34, 0.78) 0%, rgba(33, 167, 125, 0.48) 0%, rgba(36, 157, 195, 0.97) 100%);
+        color:yellow !important;
+      }
+      </style>

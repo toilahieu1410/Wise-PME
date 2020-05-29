@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('../../head/head-dashboard2.ejs') -%>
+
+  <%- include('../../head/menu.ejs') -%>
+
+  <%- include('../menu/dropdown.ejs') -%>
+  </nav>
+      <!-- partial -->
+      <div class="main-panel" style="background: url(/static/images/img-map/3.jpg);background-size: cover !important;">
+        <div class="content-wrapper">
+       
+            <div class="col-md-12">
+              <div class="row">
+              <div class="title-chart">
+              
+                <h3 style="color: white;text-align: center;font-size: 40px;margin-bottom: 30px;">Sóng hài bậc cao</h3>
+              </div>
+              <div class="col-md-6">
+                <div class="c-select__wrapper">
+                  <select id="list-1" name="list-1" style="font-size: 16px;" >
+                    <option value="time-1" >Last 6 Hours</option>
+                    <option value="time-2">Last 24 Hours</option>
+                    <option value="time-3">Last 7 Days</option>
+                    <option value="time-4">Last 30 Days</option>
+                  </select>
+                </div>
+         
+                <figure class="highcharts-figure" style="margin-bottom: 30px;">
+                  <div id="chart1"></div>
+                </figure>
+                <script>
+                  $(document).ready(function(){
+                        $("#list-1").val("time-1").change();
+                    });
+                </script>
+              </div>
+              <div class="col-md-6">
+                <div class="c-select__wrapper">
+                  <select id="list-2" name="list-2" style="font-size: 16px;">
+                    <option value="time-1" >Last 6 Hours</option>
+                    <option value="time-2">Last 24 Hours</option>
+                    <option value="time-3">Last 7 Days</option>
+                    <option value="time-4">Last 30 Days</option>
+                  </select>
+                </div>
+          
+            <figure class="highcharts-figure" style="margin-bottom: 30px;">
+                <div id="chart2"></div>
+              </figure>
+              <script>
+                $(document).ready(function(){
+                      $("#list-2").val("time-1").change();
+                  });
+              </script>
+              </div>
+              <div class="col-md-12">
+
+                <div class="c-select__wrapper">
+                  <select id="list-3" name="list-3" style="font-size: 16px;">
+                    <option value="time-1" >Last 6 Hours</option>
+                    <option value="time-2">Last 24 Hours</option>
+                    <option value="time-3">Last 7 Days</option>
+                    <option value="time-4">Last 30 Days</option>
+                  </select>
+                </div>
+        
+              <figure class="highcharts-figure" style="margin-bottom: 30px;">
+              <div id="chart3"></div>
+            </figure>
+            <script>
+              $(document).ready(function(){
+                    $("#list-3").val("time-1").change();
+                });
+            </script>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="https://hoplongtech.com/" target="_blank">hoplongtech.com</a>. All rights reserved.</span>
+            </div>
+          </footer> -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <script>
+      $('.sub-menu ul.dropdown-sidebar').hide();
+
+    $(".sub-menu a").click(function () {
+      $(this).parent(".sub-menu").children("ul").slideToggle("100");
+      $(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+    });
+    </script>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <style>
+
+
+#container {
+    height: 400px;
+}
+.navbar-expand-md {
+  display: none;
+}
+.sidebar {
+  width: auto;
+  display: none;
+}
+.navbar .navbar-brand-wrapper {
+  display: none !important;
+}
+/* .navbar-menu-wrapper.d-flex.align-items-center {
+    display: none !important;
+} */
+.page-body-wrapper {
+  margin-top: 0;
+}
+.main-panel {
+  width:100%;
+
+} 
+.main-panel {
+    min-height: calc(100vh - 10px);
+}
+.c-select__wrapper {
+  position: relative;
+    display: block;
+    max-width: 20em;
+    height: 40px;
+    background: #fff;
+    overflow: hidden;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+.c-select__wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: #ff6600;
+  pointer-events: none;
+  z-index: 1;
+}
+.c-select__wrapper::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg) translateY(-50%);
+          transform: rotate(45deg) translateY(-50%);
+  pointer-events: none;
+  top: 40%;
+  right: 18px;
+  z-index: 1;
+}
+#list-1,#list-2,#list-3 {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: 0;
+  box-shadow: none;
+  background: #fff;
+  margin: 0;
+  text-indent: 0;
+  font-size: 13px;
+  color: #2a2628;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0 60px 0 15px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+}
+#list-1::-ms-expand,#list-2::-ms-expand,#list-3::-ms-expand {
+  display: none;
+}
+.caret-right {
+    position: relative;
+    top:5px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-left: 4px solid;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+  font-weight: 600;
+    padding: 0.5em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+ul.dropdown-sidebar li ul.dropdown-menu {
+  position: absolute;
+    top: 0;
+    font-size: 14px;
+    width: 90%;
+    left: 257px;
+    z-index: 100;
+
+}
+nav.sidebar-offcanvas ul li a {
+	display: block;
+	background: #ebebeb;
+	padding: 10px 15px;
+	color: #333;
+	text-decoration: none;
+	-webkit-transition: 0.2s linear;
+	-moz-transition: 0.2s linear;
+	-ms-transition: 0.2s linear;
+	-o-transition: 0.2s linear;
+	transition: 0.2s linear;
+}
+nav.sidebar-offcanvas ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav.sidebar-offcanvas ul li a:hover {
+	background: #f8f8f8;
+	color: #515151;
+}
+nav.sidebar-offcanvas ul li a .fa.right {
+	width: 16px;
+	text-align: center;
+	margin-right: 5px;
+	float:right;
+}
+nav.sidebar-offcanvas ul ul {
+	background-color:#ebebeb;
+}
+nav.sidebar-offcanvas ul li ul li a {
+	background: #f8f8f8;
+	border-left: 4px solid transparent;
+	padding: 10px 20px;
+}
+nav.sidebar-offcanvas ul li ul li a:hover {
+	background: #ebebeb;
+	border-left: 4px solid #3498db;
+}
+.sidebar-icon-only .sidebar .nav .nav-item .nav-link .fa.right {
+    display: none;
+}
+  </style>
+
+  <!-- plugins:js -->
+ 
+  <script src="../js/vendor.bundle.base.js"></script>
+  <script src="/static/js/dashboard/LVMSB2/js5/line-chart.js"></script>
+</body>
+
+</html>
+

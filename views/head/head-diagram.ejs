@@ -1,0 +1,143 @@
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title> hoplongtech.com </title>
+  <!-- plugins:css -->
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/highchart.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/static/images/favicon.png" />
+</head>
+<body>
+    <div class="navbar-menu-wrapper d-flex align-items-center">
+      <div class="col-md-2">
+        <a href="/homepage/homepage">
+          <img class="applicationLogo" src="/static/images/wise-pme.png" style="width:auto" height="90">
+        </a>
+  
+      </div>
+      <div class="col-md-6" style="text-align: center;">
+        <h2 style="color: #35b2e2;font-weight: bold;text-shadow: 2px 3px 1px rgba(0,0,0,0.3), 3px -5px 22px rgba(255,255,255,0.3);">Power Monitoring Expert</h2>
+        <!-- <h4 style="color:#3399ff">WORLD LEADERS IN INDUSTRIAL AUTOMATION</h4> -->
+     </div>
+      <div class="col-md-4">
+        <div class="headerInfo" style="display: flex;justify-content: flex-end;color:white">
+              <div class="userImage"><i class="fa fa-user" style="margin-right: 5px;font-size: 25px;"></i><span class="currentUserName themeColor" style="font-size: 18px;"><%= user.local.email %></span></div>
+                
+              &nbsp;&nbsp;<span style="font-size: 20px;">|</span>&nbsp;&nbsp;
+                  <div class="userImage"><i class="fa fa-key" style="margin-right: 5px;font-size: 25px;"></i><a href="/logout"><span class="currentUserName themeColor" style="font-size: 18px;">Logout</span></a></div>
+                  &nbsp;&nbsp;<span style="font-size: 20px;">|</span>&nbsp;&nbsp;
+                  <div class="userImage"><i class="fa fa-user" style="margin-right: 5px;font-size: 25px;"></i><span class="currentUserName themeColor" style="font-size: 18px;">Help</span></div>
+                  &nbsp; &nbsp;<span style="font-size: 20px;">|</span>&nbsp;&nbsp;
+                  
+                  <!-- <div class="userImage"><i class="fa fa-cog" style="margin-right: 5px"></i><a href="http://10.10.11.225:1880/ui/#!/0?socketid=66ijg3Gpnc9rWAlOAAAZ" target="_blank"><span class="currentUserName themeColor">Setting</span></a></div> -->
+                  <div class="back-homepage">
+                    <a href="/homepage/homepage" style="display:inline-block;position:relative;z-index:111"><i class="fa fa-list" style="font-size: 25px;color:#fff;cursor: pointer;" ></i></a>
+                    <div class="section-tab">
+                      <ul  id="submenu" class="menu__level">
+                        <li class="menu__item">
+                          <center>
+                            <i class="fa fa fa-home" style="color:#fff;font-size: 45px;background-color: deepskyblue" > </i>
+                          </center>
+                          <a class="wrimagecard-topimage_header" href="../diagram/map1" style="display:block;position: relative; z-index:99;" > 
+                            <p>I UI Map</p>
+                          </a>
+                        </li>
+                        <li class="menu__item">
+                          <center>
+                            <i class="fa fa fa-home" style="color:#fff;font-size: 45px;background-color: deepskyblue" > </i>
+                          </center>
+                          <a class="wrimagecard-topimage_header" href="../diagram/map2" style="display:block;position: relative; z-index:99;" > 
+                            <p>One - line 1</p>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+ 
+
+            </div>
+      </div>
+      </div>
+
+      <style>
+           .section-tab {
+        display: none;
+    }
+    .back-homepage:hover .section-tab {
+        display: grid;
+        /* position the divs under the navigation links */
+        position: absolute;
+        top: 0;
+        right: 15px;
+        z-index: 99;
+        background: rgba(60, 60, 60, .9);
+    }
+        .navbar-menu-wrapper.d-flex.align-items-center {
+          background-color: #2a2b30;
+        }
+        ul.menu__level {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+        .menu__level {
+
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+    overflow-y: scroll;
+    width: calc(100% + 50px);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ ul.menu__level li.menu__item {
+    margin: 20px;
+    float: left;
+}
+ul.menu__level li.menu__item i {
+  border-radius: 15px;
+    display: block;
+    position: absolute;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    width: 80px;
+    margin: 0 auto;
+    font-size: 24px;
+}
+.wrimagecard-topimage_header {
+  min-height: 80px;
+    width: 80px;
+}
+ul.menu__level li.menu__item a p {
+  text-align: center;
+    position: relative;
+    top: 80px;
+    margin-top: 5px;
+    font-weight: 500;
+    color: #fff;
+}
+      </style>

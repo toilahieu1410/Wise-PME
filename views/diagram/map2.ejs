@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+<head>
+
+
+  <%- include('../head/head-diagram.ejs') -%>
+
+      </nav>
+      <!-- partial -->
+      <div class="main-panel" id="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+          
+            <div class="col-md-12">
+            <div class="img-map" style="width: 100%;">
+              <img class="map_hoplong" src="/static/images/img-map/img-3.png" style="width:100%;background:#000">
+            </div>
+            <div class="thong-so">
+              <div class="diagram-detail">
+                <div class="text-content" style="display:flex">
+           
+                  <a class="detail1" data-toggle="modal" data-target="#myModal1" >LVMSB1</a> 
+                </div>
+            
+                <span class="dv-1" id="dv1" ></span>
+                <span class="dv-2" id="dv2" ></span>
+                <span class="dv-3" id="dv3" ></span>
+              </div>
+              <div class="diagram-detail">
+                <div class="text-content">
+                  <a class="detail2" data-toggle="modal" data-target="#myModal2" >LVMSB2</a> 
+                </div>
+              
+                <span class="dv-4" id="dv4" ></span>
+                <span class="dv-5" id="dv5" ></span>
+                <span class="dv-6" id="dv6" ></span>
+              </div>
+              <div class="diagram-detail">
+                <div class="text-content">
+                  <a class="detail3" data-toggle="modal" data-target="#myModal3" >LVMSB3</a> 
+                </div>
+              
+                <span class="dv-7" id="dv7" ></span>
+                <span class="dv-8" id="dv8" ></span>
+                <span class="dv-9" id="dv9" ></span>
+              </div>
+            </div>
+            </div>
+     
+          
+          </div>
+
+
+        </div>
+ 
+        <!-- <style>
+          .dv-1::after,.dv-2::after,.dv-3::after {
+            content: " kWh";
+          }
+          .dv-4::after,.dv-5::after,.dv-6::after {
+            content: " A";
+          }
+          .dv-7::after,.dv-8::after,.dv-9::after {
+            content: " V";
+          }
+          .dv-10::after{
+            content: " kW";
+          }
+        </style> -->
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <!-- <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2020 <a href="https://hoplongtech.com/" target="_blank">hoplongtech.com</a>. All rights reserved.</span>
+            </div>
+          </footer> -->
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+      <div id="loadingspinner"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <!-- Script Spin load page -->
+    <script src="/static/js/loadpage/loadpage.js"></script>
+    
+    <!-- END Script Spin load page -->
+    <script>
+			$(document).ready(function() {
+
+			setInterval(function() {
+			$.ajax({
+				"url": "http://10.10.15.20:1880/lvmsb-diagram",
+
+				"success": function(data2) {
+        $("#dv1").html();
+        $("#dv2").html();
+        $("#dv3").html();
+
+        $("#dv4").html();
+        $("#dv5").html();
+        $("#dv6").html();
+
+        $("#dv7").html();
+        $("#dv8").html();
+        $("#dv9").html();
+
+        //LVMSB1
+        $("#dv10").html();
+        $("#dv11").html();
+        $("#dv12").html();
+
+        $("#dv13").html();
+        $("#dv14").html();
+        $("#dv15").html();
+
+        $("#dv16").html();
+        $("#dv17").html();
+        $("#dv18").html();
+
+        $("#dv19").html();
+        $("#dv20").html();
+        $("#dv21").html();
+        $("#dv22").html();
+
+        //LVMSB2
+        $("#dv23").html(data2.lvmsb2[0].last_CurrentA);
+        $("#dv24").html(data2.lvmsb2[0].last_CurrentB);
+        $("#dv25").html(data2.lvmsb2[0].last_CurrentC);
+
+        $("#dv26").html(data2.lvmsb2[0].last_VolAB);
+        $("#dv27").html(data2.lvmsb2[0].last_VolBC);
+        $("#dv28").html(data2.lvmsb2[0].last_VolCA);
+
+        $("#dv29").html(data2.lvmsb2[0].last_VolAN);
+        $("#dv30").html(data2.lvmsb2[0].last_VolBN);
+        $("#dv31").html(data2.lvmsb2[0].last_VolCN);
+
+        $("#dv32").html(data2.lvmsb2[0].last_powerA);
+        $("#dv33").html(data2.lvmsb2[0].last_powerB);
+        $("#dv34").html(data2.lvmsb2[0].last_powerC);
+        $("#dv35").html(data2.lvmsb2[0].last_powerH);
+
+        //LVMSB3
+        $("#dv36").html(data2.lvmsb3[0].last_CurrentA);
+        $("#dv37").html(data2.lvmsb3[0].last_CurrentB);
+        $("#dv38").html(data2.lvmsb3[0].last_CurrentC);
+
+        $("#dv39").html(data2.lvmsb3[0].last_VolAB);
+        $("#dv40").html(data2.lvmsb3[0].last_VolBC);
+        $("#dv41").html(data2.lvmsb3[0].last_VolCA);
+
+        $("#dv42").html(data2.lvmsb3[0].last_VolAN);
+        $("#dv43").html(data2.lvmsb3[0].last_VolBN);
+        $("#dv44").html(data2.lvmsb3[0].last_VolCN);
+
+        $("#dv45").html(data2.lvmsb3[0].last_powerA);
+        $("#dv46").html(data2.lvmsb3[0].last_powerB);
+        $("#dv47").html(data2.lvmsb3[0].last_powerC);
+        $("#dv48").html(data2.lvmsb3[0].last_powerH);
+				},
+				"error": function(error) {
+				console.log(error);
+				}
+			})
+			}, 1000);
+			})
+
+    flexFont = function () {
+    var divs = document.getElementsByClassName("main-panel");
+    for(var i = 0; i < divs.length; i++) {
+        var relFontsize = divs[i].offsetWidth*0.05;
+        divs[i].style.fontSize = relFontsize+'px';
+    }
+};
+
+window.onload = function(event) {
+    flexFont();
+};
+window.onresize = function(event) {
+    flexFont();
+};
+    </script>
+    <script>
+      $('.sub-menu ul').hide();
+$(".sub-menu a").click(function () {
+	$(this).parent(".sub-menu").children("ul").slideToggle("100");
+	$(this).find(".right").toggleClass("fa-caret-up fa-caret-down");
+});
+    </script>
+
+
+    <!-- page-body-wrapper ends -->
+  </div>
+  <style>
+
+
+#container {
+    height: 400px;
+}
+ .navbar-expand-md {
+  display: none;
+}
+.sidebar {
+  width: auto;
+  display: none;
+}
+.navbar .navbar-brand-wrapper {
+  display: none !important;
+}
+/* .navbar-menu-wrapper.d-flex.align-items-center {
+    display: none !important;
+} */
+.page-body-wrapper {
+  margin-top: 0;
+}
+.main-panel {
+  width:auto;
+} 
+.thong-so {
+	position: absolute;
+    top: 0;
+    right: 0;
+}
+h2.modal-title {
+  color:white;
+}
+.modal-header .close {
+  color:white;
+}
+.close {
+  opacity: 1;
+}
+.modal-body p {
+  font-size: 22px;
+    margin: 0 auto;
+    max-width: 300px;
+}
+.thong-so .diagram-detail .text-content {
+  position: relative;
+    /* position: absolute; */
+    top: 3em;
+    cursor: pointer;
+    left: -4em;
+}
+.thong-so .diagram-detail a.detail1 {
+  font-size: 0.2em;
+  font-weight: bold;
+    top:-2.5em;
+    left: -0.5em;
+    position: absolute;
+    cursor: pointer;
+}
+.thong-so .diagram-detail a.detail2 {
+  font-size: 0.2em;
+  font-weight: bold;
+    top:4.5em;
+    left: -0.5em;
+    position: absolute;
+    cursor: pointer;
+}
+.thong-so .diagram-detail a.detail3 {
+  font-size: 0.2em;
+  font-weight: bold;
+    position: absolute;
+    top: 11.3em;
+    left: -0.5em;
+    cursor: pointer;
+}
+.thong-so span.dv-1 {
+    position: absolute;
+    top: 10.9em;
+    left: -67.8em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-2 {
+    position: absolute;
+    top: 10.9em;
+    left: -58.4em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-3 {
+    position: absolute;
+    top: 10.9em;
+    left: -51.4em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-4 {
+    position: absolute;
+    top: 12em;
+    left: -67.8em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-5 {
+    position: absolute;
+    top: 12em;
+    left: -58.4em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-6 {
+    position: absolute;
+    top: 12em;
+    left: -51.4em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-7 {
+    position: absolute;
+    top: 13em;
+    left: -67.8em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-8 {
+  position: absolute;
+  top: 13em;
+    left: -58.4em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+.thong-so span.dv-9 {
+    position: absolute;
+    top: 13em;
+    left: -51.4em;
+    font-size: 0.25em;
+    color:yellow;
+    font-weight: bold;
+}
+nav.sidebar-offcanvas ul li a {
+	display: block;
+	background: #ebebeb;
+	padding: 10px 15px;
+	color: #333;
+	text-decoration: none;
+
+}
+nav.sidebar-offcanvas ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav.sidebar-offcanvas ul li a:hover {
+	background: #f8f8f8;
+	color: #515151;
+}
+nav.sidebar-offcanvas ul li a .fa.right {
+	width: 16px;
+	text-align: center;
+	margin-right: 5px;
+	float:right;
+}
+nav.sidebar-offcanvas ul ul {
+	background-color:#ebebeb;
+}
+nav.sidebar-offcanvas ul li ul li a {
+	background: #f8f8f8;
+	border-left: 4px solid transparent;
+	padding: 10px 20px;
+}
+nav.sidebar-offcanvas ul li ul li a:hover {
+	background: #ebebeb;
+	border-left: 4px solid #3498db;
+}
+.sidebar-icon-only .sidebar .nav .nav-item .nav-link .fa.right {
+    display: none;
+}
+
+  </style>
+
+  <!-- plugins:js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="./js/vendor.bundle.base.js"></script>
+
+  <script src="js-uibuilder/socket.io.js"></script>
+  <script src="js-uibuilder/uibuilderfe.min.js"></script>
+  <script src="js-uibuilder/jquery.min.js"></script>
+  <script src="js-uibuilder/index.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+<!--   <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> -->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+<!--   <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script> -->
+  <script src="./js/template.js"></script>
+
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src=""></script>
+<!--   <script src="js/data-table.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script> -->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+

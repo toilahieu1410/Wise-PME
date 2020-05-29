@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Authentication </title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login-style.css">   
+</head>
+    <body>
+    <div class="login-box">
+    <img src="/static/images/wise-pme.png" class="avatar">
+        <h1>Login Here</h1>
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+        <form action="/login" method="post">
+                <p>Email</p>
+            <input type="text" class="form-control" name="email">
+            <p>Password</p>
+            <input type="password" class="form-control" name="password">
+            <!-- <input type="submit" name="submit" onclick="check(this.form)" value="Login"> -->
+            <button type="submit" class="login-btn" > LOGIN </button>
+            <!-- <a href="#">Forget Password</a>     -->
+            </form>
+            <hr>
+
+    <!-- <p>Need an account? <a href="/signup">Signup</a></p>
+    <p>Or go <a href="/">home</a>.</p> -->
+        </div>
+
+    </body>
+</html>

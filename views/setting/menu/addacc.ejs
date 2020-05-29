@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../../head/head.ejs') -%>
+
+    <%- include('../../head/menu.ejs') -%>
+  
+    <%- include('../menu/dropdown.ejs') -%>
+
+  </nav>
+
+      <!-- partial -->
+      <div class="container">
+
+        <div class="col-sm-6 col-sm-offset-3">
+        
+            <h1><span class="fa fa-sign-in"></span> Signup</h1>
+        
+            <!-- show any messages that come back with authentication -->
+            <% if (message.length > 0) { %>
+                <div class="alert alert-danger"><%= message %></div>
+            <% } %>
+        
+            <!-- LOGIN FORM -->
+            <form action="/add-account" method="post">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <div class="form-group">
+                  <label>Role</label>
+                
+                  <select id="role" name="role" class="form-control" style="border:1px solid;outline:none">
+                    <option value="admin">Admin</option>
+                    <option value="user">User</option>
+                    <option value="guest">Guest</option>
+                  
+                  </select>
+              </div>
+        
+                <button onclick=" return create('Account successfully created')" type="submit" class="btn btn-warning btn-lg" style="font-size: 16px;">Add new Account</button>
+            </form>
+        
+            <hr>
+        
+        
+        </div>
+        
+        </div>
+
+    <!-- page-body-wrapper ends -->
+  </div>
+  <script>
+    function create(tinnhan) {
+      if(window.confirm(tinnhan) == true) {
+        return true;
+      }
+      return false;
+    }
+  </script>
+  <style>
+
+
+#container {
+    height: 400px;
+}
+.navbar-expand-md {
+  display: none;
+}
+.sidebar {
+  width: auto;
+  display: none;
+}
+.navbar .navbar-brand-wrapper {
+  display: none !important;
+}
+/* .navbar-menu-wrapper.d-flex.align-items-center {
+    display: none !important;
+} */
+.page-body-wrapper {
+  margin-top: 0;
+}
+.main-panel {
+  width:100%;
+
+} 
+.form-number {
+  background-color: white;
+}
+.content-wrapper ul {
+  list-style: none;
+  padding-left: 5px;
+}
+.content-wrapper ul li p input {
+  width: 100%;
+  border: transparent;
+    border-bottom: 1px solid #ccc;
+}
+.highcharts-data-table table {
+  font-family: Verdana, sans-serif;
+  border-collapse: collapse;
+  border: 1px solid #EBEBEB;
+  margin: 10px auto;
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+.highcharts-data-table caption {
+    padding: 1em 0;
+    font-size: 1.2em;
+    color: #555;
+}
+.highcharts-data-table th {
+  font-weight: 600;
+    padding: 0.5em;
+}
+.caret-right {
+    position: relative;
+    top:5px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-left: 4px solid;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+    padding: 0.5em;
+}
+.highcharts-data-table thead tr, .highcharts-data-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+    background: #f1f7ff;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+ul.dropdown-sidebar li ul.dropdown-menu {
+  position: absolute;
+    top: 0;
+    font-size: 14px;
+    width: 90%;
+    left: 257px;
+    z-index: 100;
+
+}
+nav.sidebar-offcanvas ul li a {
+	display: block;
+	background: #ebebeb;
+	padding: 10px 15px;
+	color: #333;
+	text-decoration: none;
+	-webkit-transition: 0.2s linear;
+	-moz-transition: 0.2s linear;
+	-ms-transition: 0.2s linear;
+	-o-transition: 0.2s linear;
+	transition: 0.2s linear;
+}
+nav.sidebar-offcanvas ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav.sidebar-offcanvas ul li a:hover {
+	background: #f8f8f8;
+	color: #515151;
+}
+nav.sidebar-offcanvas ul li a .fa.right {
+	width: 16px;
+	text-align: center;
+	margin-right: 5px;
+	float:right;
+}
+nav.sidebar-offcanvas ul ul {
+	background-color:#ebebeb;
+}
+nav.sidebar-offcanvas ul li ul li a {
+	background: #f8f8f8;
+	border-left: 4px solid transparent;
+	padding: 10px 20px;
+}
+nav.sidebar-offcanvas ul li ul li a:hover {
+	background: #d4e2f1;
+	border-left: 4px solid #3498db;
+}
+.sidebar-icon-only .sidebar .nav .nav-item .nav-link .fa.right {
+    display: none;
+}
+
+  </style>
+
+  <!-- plugins:js -->
+ 
+  <script src="js/vendor.bundle.base.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+<!--   <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script> -->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+<!--   <script src="js/off-canvas.js"></script>
+  <script src="js/hoverable-collapse.js"></script> -->
+  <script src="js/template.js"></script>
+  <script src="chartjs/pie-chart.js"></script>
+  <script src="js/line-chart.js"></script>
+   <script src="js/bar-chart.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="js/dashboard.js"></script>
+<!--   <script src="js/data-table.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script> -->
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+

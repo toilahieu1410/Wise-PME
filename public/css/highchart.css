@@ -1,0 +1,21 @@
+/************** CSS background highchart ******************/
+.highcharts-background {
+    fill: #3e3e40;
+}
+.highcharts-axis-labels text {
+  fill:#fff !important;
+}
+.highcharts-legend-item text {
+    fill: #E0E0E3 !important;
+    font-weight: bold;
+    cursor: pointer;
+    stroke-width: 0;
+}
+.highcharts-legend-item:hover text {
+    fill: #fff;
+}
+.highcharts-legend-item-hidden * {
+
+    transition: fill 250ms;
+}
+/************** END CSS background highchart ******************/
