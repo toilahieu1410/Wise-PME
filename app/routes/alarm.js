@@ -19,13 +19,12 @@ module.exports = function(app, passport) {
             return (req, res, next) => {
             if (req.user.local.role !== role1 && req.user.local.role !== role2) {
                 res.status(401)
-                return res.send('Not Allowed!')
+                return false
             }
         
             next()
             }
         }
-
 
            // Alarm
             //Do du lieu LVMSB1
@@ -40,18 +39,19 @@ module.exports = function(app, passport) {
                     .exec(function(err, data) {
                         Alarm.count().exec(function(err, count) {
                             if (err) return next(err)
-                            res.render('alarm/lvmsb1', {
+                            res.render('alarm/alarm', {
                                 user : req.user,
                                 data: data,
                                 current: page,
-                                pages: Math.ceil(count / perPage)
+                                pages: Math.ceil(count / perPage),
+                                device: 'LVMSB1'
                             })
                         })
                     })
             })
 
             //Export XLSX
-            app.post('/exportlvmsb1', function(req, res){
+            app.post('/exportLVMSB1', function(req, res){
                 var wb = XLSX.utils.book_new();
                 Alarm.find(function(err,data){
                     if(err) {
@@ -75,7 +75,8 @@ module.exports = function(app, passport) {
                     console.log(data);
                     res.render('alarm/menu/search', {
                         data: data,
-                        user: req.user
+                        user: req.user,
+                        device: 'LVMSB1'
                     })
                 })
             })
@@ -85,7 +86,11 @@ module.exports = function(app, passport) {
             app.get('/alarm/edit/LVMSB1/:id', authRole('admin', 'user'), isLoggedIn, function(req, res, next) {
                 var id2 = req.params.id;
                 Alarm.find({ _id : id2}, function(err, data) {
-                    res.render('alarm/menu/edit1', {user : req.user,data: data});
+                    res.render('alarm/menu/edit', {
+                        user : req.user,
+                        data: data,
+                        device: 'LVMSB1'
+                    });
                 })
             })
             app.post('/alarm/edit/LVMSB1/:id', function(req, res, next) {
@@ -109,7 +114,6 @@ module.exports = function(app, passport) {
             })
             
 
-
             //Do du lieu LVMSB2
             app.get('/alarm/LVMSB2/:page',isLoggedIn , function(req, res, next) {
                 var perPage = 6
@@ -122,11 +126,12 @@ module.exports = function(app, passport) {
                     .exec(function(err, data) {
                         Alarm972.count().exec(function(err, count) {
                             if (err) return next(err)
-                            res.render('alarm/lvmsb2', {
+                            res.render('alarm/alarm', {
                                 user : req.user,
                                 data: data,
                                 current: page,
-                                pages: Math.ceil(count / perPage)
+                                pages: Math.ceil(count / perPage),
+                                device: 'LVMSB2'
                             })
                         })
                     })
@@ -138,12 +143,13 @@ module.exports = function(app, passport) {
                     console.log(data);
                     res.render('alarm/menu/search', {
                         data: data,
-                        user: req.user
+                        user: req.user,
+                        device: 'LVMSB2'
                     })
                 })
             })
             //Export XLSX
-            app.post('/exportlvmsb2', function(req, res){
+            app.post('/exportLVMSB2', function(req, res){
                 var wb = XLSX.utils.book_new();
                 Alarm972.find((err,data)=>{
                     if(err) {
@@ -165,8 +171,12 @@ module.exports = function(app, passport) {
                 var id2 = req.params.id;
                 Alarm972.find({ _id : id2}, function(err, data) {
                     
-                    res.render('alarm/menu/edit2', {user : req.user,data: data});
-                    console.log(data)
+                    res.render('alarm/menu/edit', {
+                        user : req.user,
+                        data: data,
+                        device: 'LVMSB2'
+                    });
+                    
                 })
             })
             app.post('/alarm/edit/LVMSB2/:id', function(req, res, next) {
@@ -204,11 +214,12 @@ module.exports = function(app, passport) {
                         // var data1 = data.reverse()
                         AlarmDH.count().exec(function(err, count) {
                             if (err) return next(err)
-                            res.render('alarm/lvmsb3', {
+                            res.render('alarm/alarm', {
                                 user : req.user,
                                 data: data,
                                 current: page,
-                                pages: Math.ceil(count / perPage)
+                                pages: Math.ceil(count / perPage),
+                                device: 'LVMSB3'
                             })
                         })
                     })
@@ -220,12 +231,13 @@ module.exports = function(app, passport) {
                     console.log(data);
                     res.render('alarm/menu/search', {
                         data: data,
-                        user: req.user
+                        user: req.user,
+                        device: 'LVMSB3'
                     })
                 })
             })
             //Export XLSX
-            app.post('/exportlvmsb3', function(req, res){
+            app.post('/exportLVMSB3', function(req, res){
                 var wb = XLSX.utils.book_new();
                 AlarmDH.find((err,data)=>{
                     if(err) {
@@ -247,8 +259,12 @@ module.exports = function(app, passport) {
                 var id2 = req.params.id;
                 AlarmDH.find({ _id : id2}, function(err, data) {
                     
-                    res.render('alarm/menu/edit3', {user : req.user,data: data});
-                    console.log(data)
+                    res.render('alarm/menu/edit', {
+                        user : req.user,
+                        data: data,
+                        device: 'LVMSB3'
+                    });
+                    
                 })
             })
             app.post('/alarm/edit/LVMSB3/:id', function(req, res, next) {

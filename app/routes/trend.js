@@ -25,121 +25,133 @@ module.exports = function(app, passport) {
             }
         }
 
-   
         //TREND/LVMSB1
-        app.get('/trend', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/voltages', {
-                user : req.user
-            });
-        });
 
         app.get('/trend/LVMSB1/voltages', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/voltages', {
-                user : req.user
+            res.render('trend/Voltages/voltages', {
+                user : req.user,
+                url: 'LVMSB1/js/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB1/currents', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/currents', {
-                user : req.user
+            res.render('trend/Currents/currents', {
+                user : req.user,
+                url: 'LVMSB1/js2/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB1/powers', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/powers', {
-                user : req.user
+            res.render('trend/Power/powers', {
+                user : req.user,
+                url: 'LVMSB1/js3/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB1/frequency', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/frequency', {
-                user : req.user
+            res.render('trend/Frequency/frequency', {
+                user : req.user,
+                url: 'LVMSB1/js4/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB1/thd-big', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/thd-big', {
-                user : req.user
+            res.render('trend/THD_big/thd-big', {
+                user : req.user,
+                url: 'LVMSB1/js5/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB1/thd', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB1/thd', {
-                user : req.user
+            res.render('trend/thd/thd', {
+                user : req.user,
+                url: 'LVMSB1/js6/line-chart.js'
             });
         });
     
                 // Trend/LVMSB2
         app.get('/trend/LVMSB2/voltages', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB2/voltages', {
-                user : req.user
+            res.render('trend/Voltages/voltages', {
+                user : req.user,
+                url: 'LVMSB2/js/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB2/currents', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB2/currents', {
-                user : req.user
+            res.render('trend/Currents/currents', {
+                user : req.user,
+                url: 'LVMSB2/js2/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB2/powers', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB2/powers', {
-                user : req.user
+            res.render('trend/Power/powers', {
+                user : req.user,
+                url: 'LVMSB2/js3/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB2/frequency', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB2/frequency', {
-                user : req.user
+            res.render('trend/Frequency/frequency', {
+                user : req.user,
+                url: 'LVMSB2/js4/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB2/thd-big', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB2/thd-big', {
-                user : req.user
+            res.render('trend/THD_big/thd-big', {
+                user : req.user,
+                url: 'LVMSB2/js5/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB2/thd', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB2/thd', {
-                user : req.user
+            res.render('trend/thd/thd', {
+                user : req.user,
+                url: 'LVMSB2/js6/line-chart.js'
             });
         });
     
                     // Trend/LVMSB3
         app.get('/trend/LVMSB3/voltages', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB3/voltages', {
-                user : req.user
+            res.render('trend/Voltages/voltages', {
+                user : req.user,
+                url: 'LVMSB3/js/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB3/currents', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB3/currents', {
-                user : req.user
+            res.render('trend/Currents/currents', {
+                user : req.user,
+                url: 'LVMSB3/js2/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB3/powers', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB3/powers', {
-                user : req.user
+            res.render('trend/Power/powers', {
+                user : req.user,
+                url: 'LVMSB3/js3/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB3/frequency', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB3/frequency', {
-                user : req.user
+            res.render('trend/Frequency/frequency', {
+                user : req.user,
+                url: 'LVMSB3/js4/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB3/thd-big', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB3/thd-big', {
-                user : req.user
+            res.render('trend/THD_big/thd-big', {
+                user : req.user,
+                url: 'LVMSB3/js5/line-chart.js'
             });
         });
     
         app.get('/trend/LVMSB3/thd', isLoggedIn, function(req, res) {
-            res.render('trend/LVMSB3/thd', {
-                user : req.user
+            res.render('trend/thd/thd', {
+                user : req.user,
+                url: 'LVMSB3/js6/line-chart.js'
             });
         });
 }

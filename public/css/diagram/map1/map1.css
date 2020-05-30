@@ -1,0 +1,236 @@
+
+.loadingspinner {
+	pointer-events: none;
+	width: 2.5em;
+	height: 2.5em;
+	border: 0.4em solid transparent;
+	border-color: #eee;
+	border-top-color: #3E67EC;
+	border-radius: 50%;
+	animation: loadingspin 1s linear infinite;
+}
+
+@keyframes loadingspin {
+	100% {
+			transform: rotate(360deg)
+	}
+}
+
+      .dv-1::after,.dv-2::after,.dv-3::after {
+        content: " kWh";
+      }
+      .dv-4::after,.dv-5::after,.dv-6::after {
+        content: " A";
+      }
+      .dv-7::after,.dv-8::after,.dv-9::after {
+        content: " V";
+      }
+      .dv-10::after{
+        content: " kW";
+        margin-left: 10px;
+      }
+
+
+      #container {
+        height: 400px;
+    }
+    #main-panel {
+        display: none;
+    
+    }
+    
+    
+    .navbar-expand-md {
+      display: none;
+    }
+    .sidebar {
+      width: auto;
+      display: none;
+    }
+    .navbar .navbar-brand-wrapper {
+      display: none !important;
+    }
+    /* .navbar-menu-wrapper.d-flex.align-items-center {
+        display: none !important;
+    } */
+    .page-body-wrapper {
+      margin-top: 0;
+    }
+    .main-panel {
+      width:100%;
+    
+    } 
+    .text-content a.active ,.text-content a:focus {
+      border-bottom: 1px solid blue;
+      color: blue;
+    } 
+    .col-md-6 p {
+      min-width: 150px;
+      display: flex;
+    }
+    .thong-so {
+      font-size: 95px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    h2.modal-title {
+      color:white;
+    }
+    .modal-header .close {
+      color:white;
+    }
+    .close {
+      opacity: 1;
+    }
+    .modal-body p {
+      font-size: 22px;
+        margin: 0 auto;
+        max-width: 300px;
+    
+    }
+    .thong-so .diagram-detail .text-content {
+      position: relative;
+        /* position: absolute; */
+    
+        top: 3.5em;
+        cursor: pointer;
+        left: -3.3em;
+    }
+    .thong-so .diagram-detail a.detail1 {
+      font-size: 0.2em;
+      font-weight: bold;
+        top:-2.5em;
+        left: -0.5em;
+        position: absolute;
+        cursor: pointer;
+        
+    }
+    .thong-so .diagram-detail a.detail2 {
+      font-size: 0.2em;
+      font-weight: bold;
+        top:4.5em;
+        left: -0.5em;
+        position: absolute;
+        cursor: pointer;
+    }
+    .thong-so .diagram-detail a.detail3 {
+      font-size: 0.2em;
+      font-weight: bold;
+        position: absolute;
+        top: 11.3em;
+        left: -0.5em;
+        cursor: pointer;
+    }
+    .thong-so span.dv-1 {
+        position: absolute;
+        top: 10.5em;
+        left: -9.8em;
+        font-size: 0.22em;
+        color:yellow;
+            font-weight:bold;
+        
+    }
+    .thong-so span.dv-2 {
+        position: absolute;
+        top: 17em;
+        left: -9.8em;
+        font-size: 0.22em;
+        color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-3 {
+        position: absolute;
+        top: 23.5em;
+        left: -9.8em;
+        font-size: 0.22em;
+            color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-4 {
+        position: absolute;
+        top: 12em;
+        left: -9.8em;
+        font-size: 0.22em;
+        color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-5 {
+        position: absolute;
+        top: 18.5em;
+        left: -9.8em;
+        font-size: 0.22em;
+            color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-6 {
+        position: absolute;
+        top: 25em;
+        left: -9.8em;
+        font-size: 0.22em;
+            color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-7 {
+        position: absolute;
+        top:13.5em;
+        left: -9.8em;
+        font-size: 0.22em;
+        color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-8 {
+        position: absolute;
+        top: 20em;
+        left: -9.8em;
+        font-size: 0.22em;
+            color:yellow;
+            font-weight:bold;
+    }
+    .thong-so span.dv-9 {
+        position: absolute;
+        top: 26.5em;
+        left: -9.8em;
+        font-size: 0.22em;
+            color:yellow;
+            font-weight:bold;
+    }
+    nav.sidebar-offcanvas ul li a {
+        display: block;
+        background: #ebebeb;
+        padding: 10px 15px;
+        color: #333;
+        text-decoration: none;
+    
+    }
+    nav.sidebar-offcanvas ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    nav.sidebar-offcanvas ul li a:hover {
+        background: #f8f8f8;
+        color: #515151;
+    }
+    nav.sidebar-offcanvas ul li a .fa.right {
+        width: 16px;
+        text-align: center;
+        margin-right: 5px;
+        float:right;
+    }
+    nav.sidebar-offcanvas ul ul {
+        background-color:#ebebeb;
+    }
+    nav.sidebar-offcanvas ul li ul li a {
+        background: #f8f8f8;
+        border-left: 4px solid transparent;
+        padding: 10px 20px;
+    }
+    nav.sidebar-offcanvas ul li ul li a:hover {
+        background: #ebebeb;
+        border-left: 4px solid #3498db;
+    }
+    .sidebar-icon-only .sidebar .nav .nav-item .nav-link .fa.right {
+        display: none;
+    }
+    

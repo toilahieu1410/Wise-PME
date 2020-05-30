@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('../../head/head-trend.ejs') -%>
+
+  </nav>
+      <!-- partial -->
+      <div class="main-panel" style="background: url(/static/images/img-map/3.jpg);background-size: cover !important;">
+        
+        <%- include('chartPower/chartPower.ejs') -%>
+
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+
+  <link rel="stylesheet" href="/static/css/chartPower/chartPower.css">
+
+<script src="../js/vendor.bundle.base.js"></script>
+<script src="/static/js/trend/<%= url %>"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <%- include('../../head/head-dashboard.ejs') -%>
+
+  </nav>
+      <!-- partial -->
+      <div class="main-panel" style="background: url(/static/images/img-map/3.jpg);background-size: cover !important;">
+        
+        <%- include('chartFrequency/chartFrequency.ejs') -%>
+
+      </div>
+      <!-- main-panel ends -->
+    </div>
+
+    <!-- page-body-wrapper ends -->
+  </div>
+
+<link rel="stylesheet" href="/static/css/chartFrequency/chartFrequency.css">
+
+<script src="../js/vendor.bundle.base.js"></script>
+<script src="/static/js/dashboard/<%= url %>"></script>
+</body>
+
+</html>
+

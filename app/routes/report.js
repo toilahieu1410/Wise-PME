@@ -40,89 +40,101 @@ module.exports = function(app, passport) {
 
           // REPORT
     
-          app.get('/reports', isLoggedIn, function(req, res) {
-            res.render('reports/power/power', {
-                user : req.user
-            });
-        });
-    
+            // VOLTAGES
         app.get('/reports/voltages/LVMSB1', isLoggedIn, function(req, res) {
-            res.render('reports/voltages/lvmsb1', {
-                user : req.user
+            res.render('reports/voltages/voltages', {
+                user : req.user,
+                url: 'line&barchart87.js'
             });
         });
 
         app.get('/reports/voltages/LVMSB2', isLoggedIn, function(req, res) {
-            res.render('reports/voltages/lvmsb2', {
-                user : req.user
+            res.render('reports/voltages/voltages', {
+                user : req.user,
+                url: 'line&barchart972.js'
             });
         });
 
         app.get('/reports/voltages/LVMSB3', isLoggedIn, function(req, res) {
-            res.render('reports/voltages/lvmsb3', {
-                user : req.user
+            res.render('reports/voltages/voltages', {
+                user : req.user,
+                url: 'line&barchartDH.js'
             });
         });
 
+            //CURRENTS
         app.get('/reports/currents/LVMSB1', isLoggedIn, function(req, res) {
-            res.render('reports/currents/lvmsb1', {
-                user : req.user
+            res.render('reports/currents/currents', {
+                user : req.user,
+                url: 'line&barchart87.js'
             });
         });
 
         app.get('/reports/currents/LVMSB2', isLoggedIn, function(req, res) {
-            res.render('reports/currents/lvmsb2', {
-                user : req.user
+            res.render('reports/currents/currents', {
+                user : req.user,
+                url: 'line&barchart972.js'
             });
         });
 
         app.get('/reports/currents/LVMSB3', isLoggedIn, function(req, res) {
-            res.render('reports/currents/lvmsb3', {
-                user : req.user
+            res.render('reports/currents/currents', {
+                user : req.user,
+                url: 'line&barchartDH.js'
             });
         });
 
+            // THD
         app.get('/reports/thd-big/LVMSB1', isLoggedIn, function(req, res) {
-            res.render('reports/thd-big/lvmsb1', {
-                user : req.user
+            res.render('reports/thd-big/thd-big', {
+                user : req.user,
+                url: 'line&barchart87.js'
             });
         });
 
         app.get('/reports/thd-big/LVMSB2', isLoggedIn, function(req, res) {
-            res.render('reports/thd-big/lvmsb2', {
-                user : req.user
+            res.render('reports/thd-big/thd-big', {
+                user : req.user,
+                url: 'line&barchart972.js'
             });
         });
 
         app.get('/reports/thd-big/LVMSB3', isLoggedIn, function(req, res) {
-            res.render('reports/thd-big/lvmsb3', {
-                user : req.user
+            res.render('reports/thd-big/thd-big', {
+                user : req.user,
+                url: 'line&barchartDH.js'
             });
         });
 
+            // thd
         app.get('/reports/thd/LVMSB1', isLoggedIn, function(req, res) {
-            res.render('reports/thd/lvmsb1', {
-                user : req.user
+            res.render('reports/thd/thd', {
+                user : req.user,
+                url: 'line&barchart87.js'
             });
         });
 
         app.get('/reports/thd/LVMSB2', isLoggedIn, function(req, res) {
-            res.render('reports/thd/lvmsb2', {
-                user : req.user
+            res.render('reports/thd/thd', {
+                user : req.user,
+                url: 'line&barchart972.js'
             });
         });
 
         app.get('/reports/thd/LVMSB3', isLoggedIn, function(req, res) {
-            res.render('reports/thd/lvmsb3', {
-                user : req.user
+            res.render('reports/thd/thd', {
+                user : req.user,
+                url: 'line&barchartDH.js'
             });
         });
 
+            // POWER
         app.get('/reports/power', isLoggedIn, function(req, res) {
             res.render('reports/power/power', {
                 user : req.user
             });
         });
+
 
             // TIM KIEM THEO GIO
     app.get('/datetime_hour', isLoggedIn, function(req, res) {

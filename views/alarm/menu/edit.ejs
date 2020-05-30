@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../../head/head.ejs') -%>
+  
+    <meta charset="UTF-8">
+    <title> </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+	<div class="container">
+        <div class="col-md-12" style="margin-top:50px;">
+            <div class="row">
+                <% data.reverse() %>
+                <% data.forEach(function(i){ %>
+                    <form action="/alarm/edit/<%= device %>/<%= i._id %>" method="post" id="form-update">
+                        <div class="form-group" style="display:flex;align-items: center;background-color: #3ca93ed1;color: white;font-size: 18px;padding: 10px;">
+                            <label for="Device" > Location: </label>
+                            <p name="Device" id="" aria-describedby="helpId" style="margin-left:10px"><b><%= i.Device %></b> </p>
+                            <!-- <input type="text"
+                            class="form-control"  placeholder="" value="<%= i.Device %>"> -->
+                            <!-- <small id="helpId" class="form-text text-muted"> Device</small> -->
+                        </div>
+                     <div class="col-md-6">
+                     
+                        <div class="layout-bottom">
+                            <div class="form-group" style="display:flex">
+                                <i class="fa fa-circle" style="margin-right:5px;color:red"></i>
+                                <label for="Alarm"> Alarm: </label>
+                                <p name="Alarm" id="" aria-describedby="helpId" style="margin-left:10px"><%= i.Type %>: <%= i.Value %> <%= i.Unit %></p>
+                            
+                            </div>
+                    
+                            <div class="form-group" style="display:flex">
+                                <label for="Overload">Overload: </label>
+                                <p name="Alarm" id="" aria-describedby="helpId" style="margin-left:10px"><%= i.Overload %> <%= i.Unit %></p>
+                            
+                            </div>
+                        </div>
+                      
+                     </div>
+                    <div class="col-md-6">
+                        <div class="layout-bottom">
+                            <div class="form-group" style="display:flex">
+                                <label for="CreatAt"> Create At </label>
+                                <p name="Alarm" id="" aria-describedby="helpId" style="margin-left:10px"><%= i.CreatAt %></p>
+                       
+                            </div>
+                            
+                            <div class="form-group" style="display: flex;">
+                                <label for="UpdateAt"> Update At </label>
+                                <p name="Alarm" id="" aria-describedby="helpId" style="margin-left:10px"><%= i.UpdateAt %></p>
+                            </div>
+                        </div>
+                    
+                    </div>
+                        <div class="col-md-12" style="margin-top:15px">
+                            <div class="form-group">
+                                <label for="Note"> Note </label>
+                                <textarea type="text" rows="8"
+                                class="form-control" style="resize:vertical;border-radius:0" name="Note" id="" aria-describedby="helpId" placeholder="" value="">  <%= i.Note %> </textarea>
+                          
+                            </div>
+                            <div class="form-group" style="display:flex;float:right">
+                                <label for="UserId"> User Update: </label>
+                                <p name="Alarm" id="" aria-describedby="helpId" style="margin-left:10px"><b><%= i.Userid %></b></p>
+                             
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-12" style="text-align:center">
+                            <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;"> Submit</button>
+                        </div>
+
+                        <% }) %>
+                   
+                    </form>
+            </div>
+        </div>
+    
+</body>
+
+<link rel="stylesheet" href="/static/css/alarm/editAlarm.css">
+
+</html>

@@ -18,7 +18,7 @@ module.exports = function(app, passport) {
             return (req, res, next) => {
             if (req.user.local.role !== role1 && req.user.local.role !== role2) {
                 res.status(401)
-                return res.send('Not Allowed!')
+                return false
             }
         
             next()
@@ -39,7 +39,7 @@ module.exports = function(app, passport) {
         app.get('/setting/:id', isLoggedIn, function(req, res, next) {
             var id2 = req.params.id;
             alarmMax87.find({ _id : id2}, function(err, data) {
-                res.render('setting/menu/edit1', {user : req.user,data: data});
+                res.render('setting/menu/editSetting', {user : req.user,data: data});
             })
         })
         app.post('/setting/:id', function(req, res, next) {

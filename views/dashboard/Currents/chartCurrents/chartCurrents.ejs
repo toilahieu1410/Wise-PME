@@ -1,0 +1,73 @@
+<div class="content-wrapper">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="title-chart">
+          <h3 style="color: white;text-align: center;font-size: 40px;margin-bottom: 30px;">Currents</h3>
+        </div>
+        <div class="col-md-6">
+          <div class="c-select__wrapper">
+            <select id="list-1" name="list-1" style="font-size: 16px;">
+              <option value="time-1" >Last 6 Hours</option>
+              <option value="time-2">Last 24 Hours</option>
+              <option value="time-3">Last 7 Days</option>
+              <option value="time-4">Last 30 Days</option>
+            </select>
+          </div>
+       
+          <figure class="highcharts-figure" style="margin-bottom: 30px;">
+            <div id="chart1"></div>
+          </figure>
+          <script>
+            $(document).ready(function(){
+                  $("#list-1").val("time-1").change();
+              });
+          </script>
+        </div>
+        <div class="col-md-6">
+
+          <div class="c-select__wrapper">
+            <select id="list-2" name="list-2" style="font-size: 16px;">
+              <option value="time-1" >Last 6 Hours</option>
+              <option value="time-2">Last 24 Hours</option>
+              <option value="time-3">Last 7 Days</option>
+              <option value="time-4">Last 30 Days</option>
+            </select>
+          </div>
+     
+          <figure class="highcharts-figure" style="margin-bottom: 30px;">
+            <div id="chart2"></div>
+           
+          </figure>
+          <script>
+            $(document).ready(function(){
+                  $("#list-2").val("time-1").change();
+              });
+          </script>
+        </div>
+        <div class="col-md-12">
+          <div class="c-select__wrapper">
+            <select id="list-3" name="list-3" style="font-size: 16px;">
+              <option value="time-1" >Last 6 Hours</option>
+              <option value="time-2">Last 24 Hours</option>
+              <option value="time-3">Last 7 Days</option>
+              <option value="time-4">Last 30 Days</option>
+            </select>
+          </div>
+   
+        <figure class="highcharts-figure" style="margin-bottom: 30px;">
+          <div id="chart3"></div>
+         
+        </figure>
+        <script>
+          $(document).ready(function(){
+                $("#list-3").val("time-1").change();
+            });
+        </script>
+        </div>
+      </div>
+    
+
+      
+    </div>
+
+</div>

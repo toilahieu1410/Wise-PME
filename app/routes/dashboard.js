@@ -27,112 +27,133 @@ module.exports = function(app, passport) {
 
         //DASHBOARD/LVMSB1
     app.get('/dashboard/LVMSB1/voltages', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB1/voltages', {
-            user : req.user
+        res.render('dashboard/Voltages/voltages', {
+            user : req.user,
+            url: 'LVMSB1/js/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB1/currents', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB1/currents', {
-            user : req.user
+        res.render('dashboard/Currents/currents', {
+            user : req.user,
+            url: 'LVMSB1/js2/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB1/powers', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB1/powers', {
-            user : req.user
+        res.render('dashboard/Power/powers', {
+            user : req.user,
+            urlLineChart: 'LVMSB1/js3/line-chart.js',
+            urlBarChart: 'LVMSB1/js3/bar-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB1/frequency', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB1/frequency', {
-            user : req.user
+        res.render('dashboard/Frequency/frequency', {
+            user : req.user,
+            url: 'LVMSB1/js4/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB1/thd-big', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB1/thd-big', {
-            user : req.user
+        res.render('dashboard/THD_big/thd-big', {
+            user : req.user,
+            url: 'LVMSB1/js5/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB1/thd', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB1/thd', {
-            user : req.user
+        res.render('dashboard/thd/thd', {
+            user : req.user,
+            url: 'LVMSB1/js6/line-chart.js'
         });
     });
 
             // Dashboard/LVMSB2
     app.get('/dashboard/LVMSB2/voltages', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB2/voltages', {
-            user : req.user
+        res.render('dashboard/Voltages/voltages', {
+            user : req.user,
+            url: 'LVMSB2/js/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB2/currents', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB2/currents', {
-            user : req.user
+        res.render('dashboard/Currents/currents', {
+            user : req.user,
+            url: 'LVMSB2/js2/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB2/powers', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB2/powers', {
-            user : req.user
+        res.render('dashboard/Power/powers', {
+            user : req.user,
+            urlLineChart: 'LVMSB2/js3/line-chart.js',
+            urlBarChart: 'LVMSB2/js3/bar-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB2/frequency', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB2/frequency', {
-            user : req.user
+        res.render('dashboard/Frequency/frequency', {
+            user : req.user,
+            url: 'LVMSB2/js4/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB2/thd-big', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB2/thd-big', {
-            user : req.user
+        res.render('dashboard/THD_big/thd-big', {
+            user : req.user,
+            url: 'LVMSB2/js5/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB2/thd', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB2/thd', {
-            user : req.user
+        res.render('dashboard/thd/thd', {
+            user : req.user,
+            url: 'LVMSB2/js6/line-chart.js'
         });
     });
 
                 // Dashboard/LVMSB3
     app.get('/dashboard/LVMSB3/voltages', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB3/voltages', {
-            user : req.user
+        res.render('dashboard/Voltages/voltages', {
+            user : req.user,
+            url: 'LVMSB3/js/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB3/currents', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB3/currents', {
-            user : req.user
+        res.render('dashboard/Currents/currents', {
+            user : req.user,
+            url: 'LVMSB3/js2/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB3/powers', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB3/powers', {
-            user : req.user
+        res.render('dashboard/Power/powers', {
+            user : req.user,
+            urlLineChart: 'LVMSB3/js3/line-chart.js',
+            urlBarChart: 'LVMSB3/js3/bar-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB3/frequency', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB3/frequency', {
-            user : req.user
+        res.render('dashboard/Frequency/frequency', {
+            user : req.user,
+            url: 'LVMSB3/js4/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB3/thd-big', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB3/thd-big', {
-            user : req.user
+        res.render('dashboard/THD_big/thd-big', {
+            user : req.user,
+            url: 'LVMSB3/js5/line-chart.js'
         });
     });
 
     app.get('/dashboard/LVMSB3/thd', isLoggedIn, function(req, res) {
-        res.render('dashboard/LVMSB3/thd', {
-            user : req.user
+        res.render('dashboard/thd/thd', {
+            user : req.user,
+            url: 'LVMSB3/js6/line-chart.js'
         });
     });
 }

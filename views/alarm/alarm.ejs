@@ -1,0 +1,134 @@
+
+<html lang="en">
+
+    <head>
+   
+      <%- include('../head/head-alarm.ejs') -%>
+      
+      <script type="text/javascript" src="http://www.maytinhhtl.com/images/code/snowstorm.js"></script>
+          <!-- partial -->
+          <div class="main-panel" id="main-panel">
+            <div class="content-wrapper" >
+                  <div class="col-md-12" style="background: url(/static/images/img-map/3.jpg);background-size: cover !important;padding-top: 20px;height: 100vh;">
+  
+                      <div class="table-responsive">
+                        <table class="table table-striped">
+                          <thead class="thead-inverse">
+  
+                          </thead>
+                          <div style="display: flex;width: 100%;margin-bottom: 10px;">
+                            <form action="/export<%= device %>", method="post">
+                              <button type="submit" class="btn btn-success"><i class="fa fa-file-excel-o" style="margin-right:5px"></i>Export Excel</button>
+                          </form>
+                          <form action="/alarm/search/<%= device %>">
+                            <div class="form-search" style="display: flex;justify-content: flex-end;width:100%">
+                              <input type="text" id="name" name="name" placeholder="Type...">
+                              <button type="submit" class="btn btn-primary" style="border-radius: 0;"  ><i class="fa fa-search" style="margin-right:5px;"></i>Search</button>
+                            </div>
+
+                          </form>
+                        </div>
+                          <tbody>
+
+                            <% data.forEach(function(i){ %>
+
+                            <tr>
+                              <th scope="row" colspan="7" style="background-color: steelblue;text-indent: 10px; color: white;"><%= i.Device %> - <%= i.Type %></th>
+                            </tr>
+                            <tr>
+                              <% var color; %>
+                              <% if(i.isDone == true){ %>
+                              <% color = 'blue' %>
+                              <% } else{ %>
+                              <% color ='red' %>
+                              <% } %>
+                              <td style="height:50px;text-indent:10px;vertical-align: middle;min-width: 70px;"><i class="fa fa-circle" style="margin-right:5px;color:<%= color %>"></i><label><%= i.Type %>- <%= i.Value %> <%= i.Unit %></label></td>
+                              <td style="vertical-align:middle;min-width: 60px;"><label>Overload: <%= i.Overload %> <%= i.Unit %></label></td>
+    
+                              <td style="min-width:100px;vertical-align: middle;"><label>Create At: </label><span> <%= i.CreatAt %> </span> </br><label>Update At: </label><span> <%= i.UpdateAt %></span> </td>
+  
+                              <td style="min-width: 70px;vertical-align: middle;"><label>User Update:</label> <span> <%= i.Userid %></span> <br/>
+                                <div class="action-button">
+                                  <a href = "/alarm/edit/<%= device %>/<%= i._id %>">
+                                    <button type="button" class="btn btn-success"> <i class="fa fa-edit" style="margin-right: 5px;" arial-hidden="true"></i>Edit</button>
+
+                                    </a> &nbsp; &nbsp; &nbsp;
+                                    <a onclick="return confirmDelete('Are you sure want to permanently delete this message?')" href = "/alarm/remove/<%= device %>/<%= i._id %>">
+                                  <button type="button" class="btn btn-danger">       <i class="fa fa-remove" style="margin-right: 5px;" arial-hidden="true"></i>Delete</button>
+
+                                      </a>
+                                </div>
+  
+                                <script>
+                                  function confirmDelete(tinnhan) {
+                                    if(window.confirm(tinnhan) == true) {
+                                      return true;
+                                    }
+                                    return false;
+                                  }
+                                </script>
+                        
+                              </td>
+                          
+                                <td style="vertical-align:middle;width: 500px;white-space: normal;word-break: break-word;"><a href = "/alarm/edit/<%= device %>/<%= i._id %>"><div class="label-border" style="padding:10px;border:1px solid #ccc"><label><%= i.Note %></label></div></a></td>
+  
+                              <% }) %>
+                            </tr>
+                          
+                          </tbody>
+                        </table>
+                      </div>
+  
+                    <% if (pages > 0) { %>
+                      <ul class="pagination text-center">
+                          <% if (current == 1) { %>
+                              <li class="disabled"><a>First</a></li>
+                          <% } else { %>
+                              <li><a href="/alarm/<%= device %>/1">First</a></li>
+                          <% } %>
+                          <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                          <% if (i !== 1) { %>
+                              <li class="disabled"><a>...</a></li>
+                          <% } %>
+                          <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                              <% if (i == current) { %>
+                                  <li class="active"><a><%= i %></a></li>
+                              <% } else { %>
+                                  <li><a href="/alarm/<%= device %>/<%= i %>"><%= i %></a></li>
+                              <% } %>
+                              <% if (i == Number(current) + 4 && i < pages) { %>
+                                  <li class="disabled"><a>...</a></li>
+                              <% } %>
+                          <% } %>
+                          <% if (current == pages) { %>
+                              <li class="disabled"><a>Last</a></li>
+                          <% } else { %>
+                              <li><a href="/alarm/<%= device %>/<%= pages %>">Last</a></li>
+                          <% } %>
+                      </ul>
+                  <% } %>
+                  </div>
+              
+  
+        
+            <!-- content-wrapper ends -->
+            <!-- partial -->
+          </div>
+          <!-- main-panel ends -->
+        </div>
+    
+        <!-- page-body-wrapper ends -->
+      </div>
+
+      <link rel="stylesheet" href="/static/css/alarm/alarm.css">
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="../js/vendor.bundle.base.js"></script>
+        <script src="/static/js/alarm/jquery.paginate.js"></script>
+
+    </body>
+    
+    </html>
+    
+    

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../../head/head.ejs') -%>
+ 
+  </nav>
+<body>
+  <div class="main-panel" >
+    <div class="content-wrapper" style="background-color: #eee;display: flex;align-items: center;">
+      <div class="col-md-12">
+        <div class="row">
+            <% data.reverse() %>
+            <% data.forEach(function(i){ %>
+                <form action="/setting/<%= i._id %>" method="post" id="form-update">
+                  <div  >
+                    <% data.forEach(function(i){ %>
+                    <div class="column">
+                      <div class="col-md-12">
+                        <div class="row">
+                          <div class="form-edit" style="width: calc(100% - 1000px);background-color: #eee;margin:0 auto;box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07), 0 10px 10px rgba(0, 0, 0, 0.07);">
+                            <h3 class="title"><%= i.Device %></h3>
+                            <div class="form-number">
+                              <ul>
+                                <div class="form-group">
+                                  <label for="CurrentMax"> Current-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="CurrentMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.CurrentMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="VolUMax"> VolU-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="VolUMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.VolUMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="VolVMax"> VolV-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="VolVMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.VolVMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="THDBigMax"> THD-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="THDBigMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.THDBigMax %>">
+                                </div>
+                                <div class="form-group">
+                                  <label for="thdMax"> thd-Max </label>
+                                  <input type="text"
+                                  class="form-control" name="thdMax" id="" aria-describedby="helpId" placeholder="" value="<%= i.thdMax %>">
+                                </div>
+                                <!-- <div class="col-md-12" style="text-align:center">
+                                  <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;" href="/setting/<%= i._id %>"> Submit</button>
+                              </div> -->
+                              <a href = "/setting/<%= i._id %>" >
+                                <button type="submit" class="btn btn-primary" style="margin-bottom: 20px;"  ><i class="fa fa-check" style="margin-right:5px"></i> Submit </button>
+                                </a>
+                              </ul>
+                            </div>
+                          </div>
+                      
+                        </div>
+                    
+                      </div>
+                      <% }) %>
+                    </div>
+                  </div>
+                    <% }) %>
+                </form>
+        </div>
+    </div>
+    </div>
+  
+    </div>
+    
+</body>
+
+<link rel="stylesheet" href="/static/css/setting/editSetting.css">
+
+</html>

@@ -1,0 +1,30 @@
+<div class="thong-so">
+    <div class="diagram-detail">
+      <div class="text-content" style="display:flex">
+        <button class="detail1 btn btn-success" type="button" data-toggle="modal" data-target="#myModal1" style=" top: -5em; position: relative;font-size: 0.15em; ">LVMSB1</button>
+       
+      </div>
+  
+      <span class="dv-1" id="dv1" ><%= data2.lvmsb1[0].last_powerH %></span>
+      <span class="dv-2" id="dv2" ><%= data2.lvmsb2[0].last_powerH %></span>
+      <span class="dv-3" id="dv3" ><%= data2.lvmsb3[0].last_powerH %></span>
+    </div>
+    <div class="diagram-detail">
+      <div class="text-content">
+        <button class="detail2 btn btn-success" type="button" data-toggle="modal" data-target="#myModal2" style=" top: -2em; position: relative;font-size: 0.15em; ">LVMSB2</button>
+      </div>
+    
+      <span class="dv-4" id="dv4" ><%= data2.lvmsb1[0].last_CurrentAvg %></span>
+      <span class="dv-5" id="dv5" ><%= data2.lvmsb2[0].last_CurrentAvg %></span>
+      <span class="dv-6" id="dv6" ><%= data2.lvmsb3[0].last_CurrentAvg %></span>
+    </div>
+    <div class="diagram-detail">
+      <div class="text-content">
+        <button class="detail3 btn btn-success" type="button" data-toggle="modal" data-target="#myModal3" style=" top: -2em; position: relative;font-size: 0.15em; ">LVMSB3</button>
+      </div>
+    
+      <span class="dv-7" id="dv7" ><%= data2.lvmsb1[0].last_VolLL %></span>
+      <span class="dv-8" id="dv8" ><%= data2.lvmsb2[0].last_VolLL %></span>
+      <span class="dv-9" id="dv9" ><%= data2.lvmsb3[0].last_VolLL %></span>
+    </div>
+        </div>

@@ -1,0 +1,36 @@
+<div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" style="">
+        <div class="modal-header" style="background: linear-gradient(90deg, rgba(24,71,207,1) 0%, rgba(9,19,121,0.9556197478991597) 0%, rgba(13,93,210,0.9640231092436975) 100%);">
+          <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+          <h2 class="modal-title" style="text-align: center;"><%= data1[2].Device %></h2>
+        </div>
+        <div class="modal-body">
+          <h2 style="text-align: center;color: orangered;">Energy Received: <span id="dv48" style="min-width: 60px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_powerH %> kWh</span></h2>
+          <div class="col-md-6">
+            <p class="dv-4"  ><span style="min-width: 130px;display: inline-block;">Current-A:</span> <span id="dv36" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_CurrentA %></span>  |  &nbsp;&nbsp; <%= data1[2].CurrentMax %></p>
+            <p class="dv-4"  ><span style="min-width: 130px;display: inline-block;">Current-B:</span> <span id="dv37" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_CurrentB %></span> |  &nbsp;&nbsp; <%= data1[2].CurrentMax %></p>
+            <p class="dv-4"  ><span style="min-width: 130px;display: inline-block;">Current-C:</span> <span id="dv38" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_CurrentC %></span> |  &nbsp;&nbsp; <%= data1[2].CurrentMax %></p>
+            <p class="dv-7"  ><span style="min-width: 130px;display: inline-block;">Voltage-AB:</span> <span id="dv39" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_VolAB %></span> |  &nbsp;&nbsp; <%= data1[2].VolUMax %></p>
+            <p class="dv-7"  ><span style="min-width: 130px;display: inline-block;">Voltage-BC:</span> <span id="dv40" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_VolBC %></span> |  &nbsp;&nbsp; <%= data1[2].VolUMax %></p>
+            <p class="dv-7"  ><span style="min-width: 130px;display: inline-block;">Voltage-CA:</span> <span id="dv41" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_VolCA %></span> |  &nbsp;&nbsp; <%= data1[2].VolUMax %></p>
+          </div>
+          <div class="col-md-6">
+            <p class="dv-7"  ><span style="min-width: 130px;display: inline-block;">Voltage-AN:</span> <span id="dv42" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_VolAN %></span> |  &nbsp;&nbsp; <%= data1[2].VolVMax %></p>
+            <p class="dv-7"  ><span style="min-width: 130px;display: inline-block;">Voltage-BN:</span> <span id="dv43" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_VolBN %></span> |  &nbsp;&nbsp; <%= data1[2].VolVMax %></p>
+            <p class="dv-7"  ><span style="min-width: 130px;display: inline-block;">Voltage-CN: </span><span id="dv44" style="min-width: 75px;color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_VolCN %></span> |  &nbsp;&nbsp; <%= data1[2].VolVMax %></p>
+            <p class="dv-10" ><span style="min-width: 130px;display: inline-block;">Power-A:</span> <span id="dv45" style="color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_powerA %></span> </p>
+            <p class="dv-10" ><span style="min-width: 130px;display: inline-block;">Power-B:</span> <span id="dv46" style="color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_powerB %></span> </p>
+            <p class="dv-10" ><span style="min-width: 130px;display: inline-block;">Power-C:</span> <span id="dv47" style="color:blue;font-weight: bold;"><%= data2.lvmsb3[0].last_powerC %></span> </p>
+          </div>
+        </div>
+        <div class="modal-footer" style="background-color: #1d60c5;">
+          <h4 style="color:white;width:100%;text-align: left;text-transform: uppercase;">hoplongtech.com</h4>
+          <button type="button" class="btn btn-info" data-dismiss="modal"><i class="fa fa-close" style="margin-right:5px"></i>Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
