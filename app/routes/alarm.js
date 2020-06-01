@@ -5,6 +5,7 @@ var AlarmDH = require('../models/alarmDH');
 var alarmMax87 = require('../models/alarmMax87');
 var User = require('../models/user');
 var XLSX = require('xlsx');
+var moment = require('moment');
 
 module.exports = function(app, passport) {
 
@@ -44,7 +45,8 @@ module.exports = function(app, passport) {
                                 data: data,
                                 current: page,
                                 pages: Math.ceil(count / perPage),
-                                device: 'LVMSB1'
+                                device: 'LVMSB1',
+                                moment: moment
                             })
                         })
                     })
@@ -76,7 +78,8 @@ module.exports = function(app, passport) {
                     res.render('alarm/menu/search', {
                         data: data,
                         user: req.user,
-                        device: 'LVMSB1'
+                        device: 'LVMSB1',
+                        moment: moment
                     })
                 })
             })
@@ -89,17 +92,18 @@ module.exports = function(app, passport) {
                     res.render('alarm/menu/edit', {
                         user : req.user,
                         data: data,
-                        device: 'LVMSB1'
+                        device: 'LVMSB1',
+                        moment: moment
                     });
                 })
             })
             app.post('/alarm/edit/LVMSB1/:id', function(req, res, next) {
                 var id = req.params.id;
-                var now = new Date();
+                let timeMoment = moment(new Date()).format('DD/MM/YYYY-hh:mm:ss')
                 Alarm.findById(id, function(err, data) {
                     data.Note = req.body.Note;
                     data.Userid = req.body.Userid;
-                    data.UpdateAt = now;
+                    data.UpdateAt = timeMoment;
                     data.Userid = req.user.local.email;
                     data.isDone = true;
                     data.save();
@@ -131,7 +135,8 @@ module.exports = function(app, passport) {
                                 data: data,
                                 current: page,
                                 pages: Math.ceil(count / perPage),
-                                device: 'LVMSB2'
+                                device: 'LVMSB2',
+                                moment: moment
                             })
                         })
                     })
@@ -144,7 +149,8 @@ module.exports = function(app, passport) {
                     res.render('alarm/menu/search', {
                         data: data,
                         user: req.user,
-                        device: 'LVMSB2'
+                        device: 'LVMSB2',
+                        moment: moment
                     })
                 })
             })
@@ -174,18 +180,19 @@ module.exports = function(app, passport) {
                     res.render('alarm/menu/edit', {
                         user : req.user,
                         data: data,
-                        device: 'LVMSB2'
+                        device: 'LVMSB2',
+                        moment: moment
                     });
                     
                 })
             })
             app.post('/alarm/edit/LVMSB2/:id', function(req, res, next) {
                 var id = req.params.id;
-                var now = new Date();
+                let timeMoment = moment(new Date()).format('DD/MM/YYYY-hh:mm:ss')
                 Alarm972.findById(id, function(err, data) {
                     data.Note = req.body.Note;
                     data.Userid = req.body.Userid;
-                    data.UpdateAt = now;
+                    data.UpdateAt = timeMoment;
                     data.Userid = req.user.local.email;
                     data.isDone = true;
                     data.save();
@@ -219,7 +226,8 @@ module.exports = function(app, passport) {
                                 data: data,
                                 current: page,
                                 pages: Math.ceil(count / perPage),
-                                device: 'LVMSB3'
+                                device: 'LVMSB3',
+                                moment: moment
                             })
                         })
                     })
@@ -232,7 +240,8 @@ module.exports = function(app, passport) {
                     res.render('alarm/menu/search', {
                         data: data,
                         user: req.user,
-                        device: 'LVMSB3'
+                        device: 'LVMSB3',
+                        moment: moment
                     })
                 })
             })
@@ -262,18 +271,19 @@ module.exports = function(app, passport) {
                     res.render('alarm/menu/edit', {
                         user : req.user,
                         data: data,
-                        device: 'LVMSB3'
+                        device: 'LVMSB3',
+                        moment: moment
                     });
                     
                 })
             })
             app.post('/alarm/edit/LVMSB3/:id', function(req, res, next) {
                 var id = req.params.id;
-                var now = new Date();
+                let timeMoment = moment(new Date()).format('DD/MM/YYYY-hh:mm:ss')
                 AlarmDH.findById(id, function(err, data) {
                     data.Note = req.body.Note;
                     data.Userid = req.body.Userid;
-                    data.UpdateAt = now;
+                    data.UpdateAt = timeMoment;
                     data.Userid = req.user.local.email;
                     data.isDone = true;
                     data.save();

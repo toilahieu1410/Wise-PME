@@ -8,7 +8,7 @@ var alarmSchema87 = mongoose.Schema({
         Unit: String,
         Overload: String,
         CreatAt: String,
-        UpdateAt: Date,
+        UpdateAt: String,
         Userid: String,
         Note: String,
         isDone: Boolean

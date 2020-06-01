@@ -156,6 +156,7 @@ module.exports = function(app, passport) {
         let powerHDh = await powerHourDh.find({
             'CreateAt': {'$gte': new Date(start_date), '$lte': new Date(end_date)}
         })
+
         res.render('reports/power/power_hour', {
             user : req.user,
             powerH87: powerH87,
@@ -209,8 +210,8 @@ module.exports = function(app, passport) {
     });
 
     app.get('/energy_reveiced', async (req, res, next) => {
-        var start_date = (req.query.startDate);
-        var end_date = (req.query.endDate);
+        let start_date = (req.query.startDate);
+        let end_date = (req.query.endDate);
         let power87 = await powerH87.find({
             'CreateAt': {'$gte': new Date(start_date), '$lte': new Date(end_date)}
         })

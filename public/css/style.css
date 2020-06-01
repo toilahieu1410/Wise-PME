@@ -84,6 +84,9 @@ animation: loadingspin 1s linear infinite;
   width:100% !important;
   height:100% !important;
 }
+text.highcharts-credits {
+  display: none;
+}
 svg.highcharts-root {
 width:100% !important;
   height:100% !important;

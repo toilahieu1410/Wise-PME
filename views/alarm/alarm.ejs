@@ -45,7 +45,7 @@
                               <td style="height:50px;text-indent:10px;vertical-align: middle;min-width: 70px;"><i class="fa fa-circle" style="margin-right:5px;color:<%= color %>"></i><label><%= i.Type %>- <%= i.Value %> <%= i.Unit %></label></td>
                               <td style="vertical-align:middle;min-width: 60px;"><label>Overload: <%= i.Overload %> <%= i.Unit %></label></td>
     
-                              <td style="min-width:100px;vertical-align: middle;"><label>Create At: </label><span> <%= i.CreatAt %> </span> </br><label>Update At: </label><span> <%= i.UpdateAt %></span> </td>
+                              <td style="min-width:100px;vertical-align: middle;"><label>Create At: </label><span> <%= moment(i.CreatAt).format('DD/MM/YYYY-hh:mm:ss') %> </span> </br><label>Update At: </label><span> <%= i.UpdateAt %></span> </td>
   
                               <td style="min-width: 70px;vertical-align: middle;"><label>User Update:</label> <span> <%= i.Userid %></span> <br/>
                                 <div class="action-button">
@@ -64,7 +64,7 @@
                                     if(window.confirm(tinnhan) == true) {
                                       return true;
                                     }
-                                    return false;
+                                    return false; 
                                   }
                                 </script>
                         
