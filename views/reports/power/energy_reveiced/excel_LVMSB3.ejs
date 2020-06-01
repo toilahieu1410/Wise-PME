@@ -1,0 +1,71 @@
+<div class="data-table" id="LVMSB3" data-SheetName="LVMSB3" style="display:none">
+	<table style="border:0;" cellpadding="10" cellspacing="10">
+		<tr>
+			<td colspan="2" align="center">
+				<p style="font-size:18px"><b>Sumirubber Vietnam</b></p>
+				<p> -----------o0o------------</p>
+			</td>
+			<td colspan="2" align="center">
+				<p style="font-size:18px"><b>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</b></p>
+				<p style="font-weight:bold">Độc lập – Tự do – Hạnh Phúc</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2" align="center">
+				-----------o0o------------
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"></td>
+			<td colspan="2" align="center">
+				........., ngày .....&nbsp;tháng.....&nbsp;năm.....
+			</td>
+		</tr>
+	</table>
+	<table class="table sticky-table" >
+		<thead>
+			<tr>
+				<td colspan="4" align="center"><p style="font-size:28px"><b>BÁO CÁO TIÊU THỤ ĐIỆN</b></p></td>
+			</tr>
+			<tr>
+				<td colspan="4" align="center"><span>Từ ngày:</span>&nbsp;<span><%= start_date %> </span>&nbsp;&nbsp;<span>Đến ngày:</span>&nbsp;<span><%= end_date %> </span></td>
+			</tr>
+			<tr>
+				<td colspan="4" align="center"><span>Họ và Tên:</span><span>....................... </span><span>Chức vụ:</span><span>............. </span><span>Bộ phận công tác:</span><span>............. </span></td>
+			</tr>
+		</thead>
+		<thead>
+			<tr>
+				<th style="background-color:deepskyblue;color:white;width:5em;border:thin solid white">STT</th>
+				<th style="background-color:deepskyblue;color:white;width:10em;border:thin solid white">Thời gian</th>
+				<th style="background-color:deepskyblue;color:white;width:8em;border:thin solid white">Tiêu thụ</th>
+				<th style="background-color:deepskyblue;color:white;width:9em;border:thin solid white">Ghi chú</th>
+			</tr>
+		</thead>
+		<tbody>
+	  
+		
+			<% for(let i=0; i<powerDH.length; i++){ %>
+			<tr>
+				<td class="text-center" style="border:thin solid black;text-align:center;width:5em"><p style="width:9em;white-space:nowrap;overflow:hidden"> <%= i+1 %></p></td>
+				<td class="text-center" style="border:thin solid black;text-align:center;width:10em"><p style="width:9em;white-space:nowrap;overflow:hidden"> <%= powerDH[i].Time %></p></td>
+				<td class="text-center" style="border:thin solid black;text-align:center;width:8em"><p style="width:9em;white-space:nowrap;overflow:hidden"> <%= powerDH[i].powerH %></p></td>
+				<td class="text-center" style="border:thin solid black;text-align:center;width:8em"><p style="width:9em;white-space:nowrap;overflow:hidden"> </p></td>
+			</tr>
+		  
+			<% } %>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td class="text-center" colspan="2" style="border:thin solid black;text-align:center;width:9em"><p style="width:9em;white-space:nowrap;overflow:hidden"> Tổng số</p></td>
+				<% var plantRateSum = 0;  %>
+				<% for(let i=0; i<powerDH.length; i++){ %>
+					<% plantRateSum +=  powerDH[i].powerH %> 
+					<% } %>
+				<td class="text-center" style="border:thin solid black;text-align:center;width:9em"><p style="width:9em;white-space:nowrap;overflow:hidden"> <%= plantRateSum %></p></td>
+				
+			</tr>
+		</tfoot>
+	</table>
+</div>

@@ -1581,6 +1581,3 @@ $("#list-6").on('change', function() {
     
   
   });
-
-    
-  

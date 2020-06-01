@@ -19,8 +19,12 @@
           <div class="well" style="box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1), 0 -2px 20px rgba(0, 0, 0, 0.1);text-align: center;background: #ccc;">
               <h3 style="text-align: center;"><i class="fa fa-user" style="margin-right: 5px;"></i>User Account</h3>
                   <p style="font-size: 16px;display: inline-block;text-align: left;line-height: 30px;">
-                      <strong style="min-width: 50px;display: inline-block;">id:</strong> <%= data[i]._id %><br>
+                    
+                      <!-- <strong style="min-width: 50px;display: inline-block;">id:</strong> <%= data[i]._id %><br> -->
                       <strong style="min-width: 50px;display: inline-block;">email:</strong> <%= data[i].local.email %><br>
+                      <strong style="min-width: 50px;display: inline-block;">Name:</strong> <%= data[i].local.username %><br>
+                      <strong style="min-width: 50px;display: inline-block;">Position:</strong> <%= data[i].local.position %><br>
+                      <strong style="min-width: 50px;display: inline-block;">Phone:</strong> <%= data[i].local.phone %><br>
                       <!-- <strong>password</strong>: <%= data[i].local.password %><br> -->
                       <strong style="min-width: 50px;display: inline-block;">role:</strong> <%= data[i].local.role %><br>
                   </p>

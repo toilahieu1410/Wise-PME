@@ -1,0 +1,11 @@
+.md-form.mb-5 label {
+    min-width:85px;
+  }
+  .highcharts-container {
+  width:auto !important;
+  height:auto !important;
+}
+svg.highcharts-root {
+width:auto !important;
+  height:auto !important;
+}

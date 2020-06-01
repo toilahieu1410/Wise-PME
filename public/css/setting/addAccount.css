@@ -12,9 +12,7 @@
 .navbar .navbar-brand-wrapper {
   display: none !important;
 }
-/* .navbar-menu-wrapper.d-flex.align-items-center {
-    display: none !important;
-} */
+
 .page-body-wrapper {
   margin-top: 0;
 }

@@ -20,7 +20,7 @@
   } 
         .form-group label {
        font-size:unset; 
-          line-height:20px; 
+        line-height:20px; 
        vertical-align:middle; 
        margin-bottom: 0; 
   }
@@ -141,10 +141,6 @@
       .table>thead>tr>th {
         border-bottom: none;
       }
-      /* .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-        border-top:none;
-        border-right: 1px solid #ddd;
-      } */
       nav.sidebar-offcanvas ul {
         list-style: none;
         margin: 0;
@@ -181,8 +177,6 @@
       .table td {
         font-size: 14px;
       }
-        </style>
-  <style>
       .layout-bottom {
           border-bottom: 1px solid #bbb;
       }

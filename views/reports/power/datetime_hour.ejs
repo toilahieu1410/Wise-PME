@@ -3,7 +3,7 @@
 <head>
 
   <meta charset="utf-8">
-  <title>jQuery UI Datepicker - Default functionality</title>
+  <title>hoplongtech.com</title>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
@@ -11,7 +11,9 @@
   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css">
-  <%- include('../../head/head-report.ejs') -%>
+
+   <%- include('../../head/head-report.ejs') -%>
+
 </head>
 <body>
 
@@ -53,40 +55,12 @@
         
     </form>
 
-      <script>
-    
-        $('#end-date').datepicker({
-          dateFormat: "yy/mm/dd" 
-        });
-  
-    $("#start-date").datepicker({
-      dateFormat: "yy/mm/dd",
-      onSelect: function(date) {
-        var date1 = $('#start-date').datepicker('getDate');
-        var date = new Date(Date.parse(date1));
-        date.setDate(date.getDate());
-        var newDate = date.toDateString();
-        newDate = new Date(Date.parse(newDate));
-        $('#end-date').datepicker("option", "minDate", newDate);
-      }
-    });
-    </script>
+    <script src="/static/js/reports/dateTime/datetime_hour.js"></script>
       
     </div>
   </div>
 </div>
 </body>
 </html>
-<style>
-  .md-form.mb-5 label {
-    min-width:85px;
-  }
-  .highcharts-container {
-  width:auto !important;
-  height:auto !important;
-}
-svg.highcharts-root {
-width:auto !important;
-  height:auto !important;
-}
-</style>
+
+  <link rel="stylesheet" href="/static/css/reports/datetime_hour.css">

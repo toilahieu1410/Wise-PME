@@ -8,7 +8,11 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String,
-        role         : String
+        role         : String,
+        username     : String,
+        position     : String,
+        phone        : String,
+        avatar       : {type: String, default: 'avatar-default.jpg'}
     }
 
 });

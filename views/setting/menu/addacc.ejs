@@ -21,23 +21,39 @@
         
             <!-- LOGIN FORM -->
             <form action="/add-account" method="post">
+
                 <div class="form-group">
                     <label>Email</label>
                     <input type="text" class="form-control" name="email">
                 </div>
+
+                <div class="form-group">
+                  <label>Name</label>
+                  <input type="text" class="form-control" name="username">
+                </div>
+
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" class="form-control" name="password">
                 </div>
+
                 <div class="form-group">
                   <label>Role</label>
-                
                   <select id="role" name="role" class="form-control" style="border:1px solid;outline:none">
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                     <option value="guest">Guest</option>
-                  
                   </select>
+              </div>
+
+              <div class="form-group">
+                <label>Position</label>
+                <input type="text" class="form-control" name="position">
+              </div>
+
+              <div class="form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" name="phone">
               </div>
         
                 <button onclick=" return create('Account successfully created')" type="submit" class="btn btn-warning btn-lg" style="font-size: 16px;">Add new Account</button>

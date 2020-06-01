@@ -65,14 +65,14 @@ module.exports = function(app, passport) {
             })
         });
         // Add Acount
-        app.get('/add-account', function(req, res, next) {
+        app.get('/add-account', authRole('admin'), isLoggedIn, function(req, res, next) {
             res.render('setting/menu/addacc', {user : req.user, message: req.flash('signupMessage')});
         })
 
         app.post('/add-account', passport.authenticate('local-signup', {
             successRedirect : '/account', // Dieu huong toi trang hien thi
             failureRedirect : '/add-account', // Tro lai trang chu neu loi
-            failureFlash : true 
+            failureFlash : true,
         }));
 
         //Xoa Acount
