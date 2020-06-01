@@ -138,7 +138,7 @@ module.exports = function(app, passport) {
 
             // TIM KIEM THEO GIO
     app.get('/datetime_hour', isLoggedIn, function(req, res) {
-        res.render('reports/power/datetime_hour.ejs', {
+        res.render('reports/power/datetime_hour', {
             user : req.user,
             action: 'power_hour'
         });
