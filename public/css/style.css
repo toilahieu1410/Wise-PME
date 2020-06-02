@@ -59,33 +59,14 @@
 /*-------------------------------------------------------------------*/
 /* === SCSS Compass Functions === */
 body {
-  background: url('/static/images/img-map/3.jpg');
+  background: #000;
 }
 /****************** CSS Spin load page *****************************/
-#loadingspinner {
-  display: block;
-  position: absolute;
- 
-  top: 50%;
-  left: 50%;
 
-  z-index: 100;
-  pointer-events: none;
-width: 4.5em;
-height: 4.5em;
-border: 0.4em solid transparent;
-border-color: #eee;
-border-top-color: #3E67EC;
-border-radius: 50%;
-animation: loadingspin 1s linear infinite;
-}
 /******************END CSS Spin load page *****************************/
 .highcharts-container {
   width:100% !important;
   height:100% !important;
-}
-text.highcharts-credits {
-  display: none;
 }
 svg.highcharts-root {
 width:100% !important;
@@ -8415,8 +8396,8 @@ address p {
 /* Miscellanoeous */
 body,
 html {
-  overflow-x: hidden;
-  padding-right: 0 !important;
+  background: #000;
+  height: 100%;
 }
 
 *:-moz-full-screen,

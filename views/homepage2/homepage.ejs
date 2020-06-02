@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <%- include('../head/head-homepage.ejs') -%>
+
+  <link rel="stylesheet" href="/static/css/demo.css"></script>
+  <link rel="stylesheet" href="/static/css/component.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<!-- menu styles -->
+
+<head>
+
+      <!-- partial -->
+      <div class="main-panel" style="width:auto;background: url(/static/images/background/city_night.jpg);background-size: cover;">
+        <div class="content-wrapper">
+          <div class="row">
+          
+<div class="container-fluid" style="width:70%;align-items: center;flex-flow: wrap; display: flex;vertical-align: middle;">
+    <div class="left-categories">
+      <nav id="ml-menu" class="menu">
+        <button class="action action--close" aria-label="Close Menu"><span class="icon icon--cross"></span></button>
+        <div class="menu__wrap">
+
+          <%- include('mainMenu/mainMenu.ejs') -%>
+
+          <!-- Diagram Menu -->
+          <%- include('diagramMenu/diagramMenu.ejs') -%>
+
+          <!-- Dashboard Menu -->
+          <%- include('dashboardMenu/dashboardMenu.ejs') -%>
+
+          <!-- Trend Menu -->
+          <%- include('trendMenu/trendMenu.ejs') -%>
+
+          <!-- Alarm Menu -->
+          <%- include('alarmMenu/alarmMenu.ejs') -%>
+      
+          <!-- Report Menu -->
+          <%- include('reportMenu/reportMenu.ejs') -%>
+
+          <!-- Setting Menu -->
+          <%- include('settingMenu/settingMenu.ejs') -%>
+
+        </div>
+      </nav>
+    </div>
+  </div>
+  </div>
+</div>
+          </div>
+        </div>
+        <script>
+      </script>
+      </div>
+      <!-- main-panel ends -->
+    </div>
+
+    <!-- page-body-wrapper ends -->
+    
+  <link rel="stylesheet" href="/static/css/homepage/styleHomepage.css">
+
+  </div>
+
+  <!-- plugins:js -->
+  
+  <!-- endinject -->
+
+  <!-- Custom js for this page-->
+
+  <!--  JS HOMEPAGE PME-->
+  <script src="/static/js/homepage/homepage.js"></script>
+  <script src="/static/js/homepage/classie.js"></script>
+  <script src="/static/js/homepage/main.js"></script>
+  <script src="/static/js/homepage/menuE1.js"></script>
+    <!-- End JS HOMEPAGE PME-->
+</body>
+
+</html>
+

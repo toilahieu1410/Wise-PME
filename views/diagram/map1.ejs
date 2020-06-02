@@ -8,9 +8,7 @@
 
       </nav>
       <!-- partial -->
-      <div class="main-panel">
-
-    
+      <div class="main-panel" id="main-panel">
         <div class="content-wrapper">
           <div class="row">
           
@@ -35,12 +33,26 @@
 
         <!-- content-wrapper ends -->
         <!-- partial -->
+        <div class="se-pre-con"></div>
       </div>
 
       <!-- main-panel ends -->
+    
     </div>
+    <div id="loadingspinner">
+      <div class="lds-roller">
+        <i class="fa fa-sync"></i>
+    </div>
+    <div style="font-size: 20px;color:#fff">Loading...</div>
+    </div>
+    <script>
+      $(window).load(function() {
+        // Animate loader off screen
+        $(".se-pre-con").fadeIn(120).delay(120).fadeTo(150, 0.5).fadeOut("slow");
+      });
+  </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+    <script src="/static/js/loadpage/loadpage.js"></script>
 
     <script src="/static/js/diagram/map1/request.js"></script>
 
